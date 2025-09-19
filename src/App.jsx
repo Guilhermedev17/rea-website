@@ -7,12 +7,12 @@ import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, 
 import './App.css'
 
 // Import das imagens
-import reaLogo from './assets/rea_logo_correct.png'
+import reaLogo from './assets/rea_logo_transparent_final.png'
 import neoenergia from './assets/neoenergia_logo_new_transparent.png'
 import edpLogo from './assets/edp_logo_improved.png'
 import santaMaria from './assets/santa_maria_logo_new_transparent.png'
 import linharesGeracao from './assets/linhares_geracao_logo_new_transparent.png'
-import tropicaliaLogo from './assets/tropicalia_logo_clean.png'
+import tropicaliaLogo from './assets/tropicalia_logo_official.png'
 import povoacaoEnergiaLogo from './assets/povoacao_energia_logo.png'
 import vegetationIntervention from './assets/vegetation_intervention_real.jpeg'
 import electricalMaintenance from './assets/electrical_network_maintenance_real.jpeg'
@@ -149,16 +149,11 @@ function App() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div className="flex justify-center mb-6">
                   <img 
                     src={vegetationIntervention} 
                     alt="Limpeza de Faixa de Servidão" 
-                    className="w-full h-64 object-cover rounded-lg"
-                  />
-                  <img 
-                    src={electricalMaintenance} 
-                    alt="Manutenção de Redes Elétricas" 
-                    className="w-full h-64 object-cover rounded-lg"
+                    className="w-full max-w-2xl h-64 object-cover rounded-lg shadow-lg"
                   />
                 </div>
                 <div className="max-w-2xl mx-auto">
@@ -206,7 +201,16 @@ function App() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center mb-3">
+                <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                  <Scissors className="w-5 h-5 text-orange-500" />
+                </div>
+                <h4 className="font-semibold text-gray-900">Reabertura de Faixa Manual</h4>
+              </div>
+              <p className="text-sm text-gray-600">Serviços manuais especializados de reabertura de faixas de servidão</p>
+            </div>
             <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center mb-3">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
