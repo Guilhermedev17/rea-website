@@ -13,7 +13,8 @@ import edpLogo from './assets/edp_logo_improved.png'
 import santaMaria from './assets/santa_maria_logo_new_transparent.png'
 import linharesGeracao from './assets/linhares_geracao_logo_new_transparent.png'
 import tropicaliaLogo from './assets/tropicalia_logo_official.png'
-import povoacaoEnergiaLogo from './assets/povoacao_energia_logo.png'
+import enevaLogo from './assets/eneva_logo.png'
+import coelbaLogo from './assets/coelba_logo.png'
 import vegetationIntervention from './assets/vegetation_intervention_real.jpeg'
 import electricalMaintenance from './assets/electrical_network_maintenance_real.jpeg'
 import electricalSafety from './assets/electrical_safety_real.png'
@@ -298,7 +299,10 @@ function App() {
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               </div>
               <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                <img src={enevaLogo} alt="Eneva" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              </div>
+              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
+                <img src={coelbaLogo} alt="Coelba" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               </div>
               {/* Duplicando para efeito contínuo */}
               <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
@@ -317,7 +321,10 @@ function App() {
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               </div>
               <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                <img src={enevaLogo} alt="Eneva" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              </div>
+              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
+                <img src={coelbaLogo} alt="Coelba" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
               </div>
             </div>
           </div>
