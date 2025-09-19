@@ -418,7 +418,6 @@ function App() {
             whileInView="animate"
             viewport={{ once: true, amount: 0.3 }}
           >
-
             <motion.div 
               className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group"
               variants={scaleIn}
@@ -430,14 +429,14 @@ function App() {
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <motion.div 
-                className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+                className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Scissors className="w-8 h-8 text-white" />
+                <TreePine className="w-8 h-8 text-white" />
               </motion.div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">Reabertura Manual</h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Reabertura especializada de faixas de servidão</p>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-green-600 transition-colors">Limpeza Manual</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Remoção manual de vegetação em faixas de servidão</p>
             </motion.div>
 
             <motion.div 
