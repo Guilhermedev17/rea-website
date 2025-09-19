@@ -280,53 +280,53 @@ function App() {
             </p>
           </div>
           
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden py-4">
             <motion.div 
-              className="flex space-x-8 items-center"
-              animate={{ x: [-1200, 0] }}
+              className="flex space-x-12 items-center"
+              animate={{ x: [-1400, 0] }}
               transition={{ 
-                duration: 30, 
+                duration: 35, 
                 repeat: Infinity, 
                 ease: "linear",
                 repeatType: "loop"
               }}
             >
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={neoenergia} alt="Neoenergia" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={edpLogo} alt="EDP" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={santaMaria} alt="Santa Maria" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={linharesGeracao} alt="Linhares Geração" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
               {/* Duplicando para efeito contínuo */}
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={neoenergia} alt="Neoenergia" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={edpLogo} alt="EDP" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={santaMaria} alt="Santa Maria" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={linharesGeracao} alt="Linhares Geração" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow min-w-[200px]">
-                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
+                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
             </motion.div>
           </div>
