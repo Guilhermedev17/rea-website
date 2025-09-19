@@ -277,28 +277,20 @@ function App() {
                 </motion.p>
               </motion.div>
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex justify-center"
                 variants={fadeInUp}
               >
                 <motion.div
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-opacity duration-200">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-200">
                     Nossos Serviços
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 transition-opacity duration-200">
-                    Saiba Mais
                   </Button>
                 </motion.div>
               </motion.div>
               <motion.div 
-                className="grid grid-cols-2 gap-8 pt-8"
+                className="flex justify-center pt-8"
                 variants={staggerContainer}
               >
                 <motion.div 
@@ -307,7 +299,7 @@ function App() {
                   whileHover={{ y: -5 }}
                 >
                   <motion.div 
-                    className="text-3xl font-bold text-blue-600  transition-transform duration-200"
+                    className="text-3xl font-bold text-blue-600 transition-transform duration-200"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -315,21 +307,6 @@ function App() {
                   >15+</motion.div>
                   <div className="text-sm text-gray-600">Anos de Experiência</div>
                 </motion.div>
-                <motion.div 
-                  className="text-center group"
-                  variants={scaleIn}
-                  whileHover={{ y: -5 }}
-                >
-                  <motion.div 
-                    className="text-3xl font-bold text-orange-500  transition-transform duration-200"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1.8, type: "spring", stiffness: 200 }}
-                  >100%</motion.div>
-                  <div className="text-sm text-gray-600">Segurança</div>
-                </motion.div>
-
               </motion.div>
             </motion.div>
             <motion.div 
