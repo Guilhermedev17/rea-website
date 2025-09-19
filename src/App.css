@@ -144,6 +144,20 @@
   perspective: 1000px;
 }
 
+/* Melhora a nitidez das imagens durante animações */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  will-change: auto;
+}
+
+/* Evita blur em elementos animados */
+.group:hover img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 /* Transições suaves globais */
 .transition-all {
   transition-property: all;

@@ -143,7 +143,7 @@ function App() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-200 shadow-lg hover:shadow-xl">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white transition-opacity duration-200 shadow-lg hover:shadow-xl">
                     <Phone className="w-4 h-4 mr-2" />
                     Contato
                   </Button>
@@ -169,48 +169,48 @@ function App() {
             >
               <motion.a 
                 href="#home" 
-                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Início
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
               </motion.a>
               <motion.a 
                 href="#services" 
-                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Serviços
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
               </motion.a>
               <motion.a 
                 href="#clients" 
-                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Clientes
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
               </motion.a>
               <motion.a 
                 href="#about" 
-                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Sobre
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
               </motion.a>
               <motion.a 
                 href="#contact" 
-                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Contato
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
               </motion.a>
               <motion.div 
                 className="ml-auto hidden md:block"
@@ -243,7 +243,7 @@ function App() {
             <motion.div className="space-y-8" variants={fadeInUp}>
               <motion.div className="space-y-4" variants={staggerContainer}>
                 <motion.div variants={scaleIn}>
-                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200 transition-all duration-200">
+                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200 transition-opacity duration-200">
                     <Leaf className="w-4 h-4 mr-1" />
                     Empresa Amiga da Natureza
                   </Badge>
@@ -284,7 +284,7 @@ function App() {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-200">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-opacity duration-200">
                     Nossos Serviços
                   </Button>
                 </motion.div>
@@ -292,7 +292,7 @@ function App() {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 transition-all duration-200">
+                  <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 transition-opacity duration-200">
                     Saiba Mais
                   </Button>
                 </motion.div>
@@ -307,7 +307,7 @@ function App() {
                   whileHover={{ y: -5 }}
                 >
                   <motion.div 
-                    className="text-3xl font-bold text-blue-600 group-hover:scale-110 transition-transform duration-200"
+                    className="text-3xl font-bold text-blue-600  transition-transform duration-200"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -321,7 +321,7 @@ function App() {
                   whileHover={{ y: -5 }}
                 >
                   <motion.div 
-                    className="text-3xl font-bold text-orange-500 group-hover:scale-110 transition-transform duration-200"
+                    className="text-3xl font-bold text-orange-500  transition-transform duration-200"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -598,7 +598,7 @@ function App() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={scaleIn}>
-              <Badge className="bg-orange-100 text-orange-800 mb-4 hover:bg-orange-200 transition-all duration-200">
+              <Badge className="bg-orange-100 text-orange-800 mb-4 hover:bg-orange-200 transition-opacity duration-200">
                 Nossos Clientes
               </Badge>
             </motion.div>
@@ -641,7 +641,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
               </motion.div>
               
               <motion.div 
@@ -653,7 +653,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -665,7 +665,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -677,7 +677,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -689,7 +689,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -701,7 +701,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -713,7 +713,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               {/* Segunda série para continuidade */}
@@ -726,7 +726,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
               </motion.div>
               
               <motion.div 
@@ -738,7 +738,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -750,7 +750,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -762,7 +762,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -774,7 +774,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -786,7 +786,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -798,7 +798,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               {/* Terceira série para transição imperceptível */}
@@ -811,7 +811,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
               </motion.div>
               
               <motion.div 
@@ -823,7 +823,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -835,7 +835,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -847,7 +847,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -859,7 +859,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -871,7 +871,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -883,7 +883,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
             </motion.div>
           </motion.div>
