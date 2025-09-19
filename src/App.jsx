@@ -13,7 +13,7 @@ import edpLogo from './assets/edp_logo_improved.png'
 import santaMaria from './assets/santa_maria_logo_new_transparent.png'
 import linharesGeracao from './assets/linhares_geracao_logo_new_transparent.png'
 import tropicaliaLogo from './assets/tropicalia_logo_official.png'
-import povoacaoEnergiaLogo from './assets/povoacao_energia_logo.png'
+import enevaLogo from './assets/eneva_logo.png'
 import vegetationIntervention from './assets/vegetation_intervention_real.jpeg'
 import electricalMaintenance from './assets/electrical_network_maintenance_real.jpeg'
 import electricalSafety from './assets/electrical_safety_real.png'
@@ -307,7 +307,7 @@ function App() {
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
               <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
               {/* Duplicando para efeito contínuo */}
               <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
@@ -326,7 +326,7 @@ function App() {
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
               <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={povoacaoEnergiaLogo} alt="Povoacao Energia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
               </div>
             </motion.div>
           </div>
