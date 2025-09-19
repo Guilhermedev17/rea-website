@@ -284,9 +284,9 @@ function App() {
           <div className="relative overflow-hidden py-4">
             <motion.div 
               className="flex space-x-12 items-center"
-              animate={{ x: [-1400, 0] }}
+              animate={{ x: [0, -1680] }}
               transition={{ 
-                duration: 35, 
+                duration: 30, 
                 repeat: Infinity, 
                 ease: "linear",
                 repeatType: "loop"
