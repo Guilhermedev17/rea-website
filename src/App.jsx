@@ -20,191 +20,501 @@ import electricalMaintenance from './assets/electrical_network_maintenance_real.
 import electricalSafety from './assets/electrical_safety_real.png'
 import aboutSectionImage from './assets/about_section_image.jpg'
 
+// Variantes de animação para melhor performance e suavidade
+const pageVariants = {
+  initial: { 
+    opacity: 0,
+    y: 20
+  },
+  animate: { 
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3
+    }
+  }
+}
+
+const fadeInUp = {
+  initial: { 
+    opacity: 0, 
+    y: 30 
+  },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+}
+
+const scaleIn = {
+  initial: { 
+    opacity: 0, 
+    scale: 0.95 
+  },
+  animate: { 
+    opacity: 1, 
+    scale: 1,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+}
+
 function App() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
       className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50"
     >
       {/* Header */}
-      <header className="sticky top-0 z-50">
+      <motion.header 
+        className="sticky top-0 z-50"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
         {/* Barra Superior - Logo e Informações */}
-        <div className="bg-white border-b border-gray-200">
+        <motion.div 
+          className="bg-white/95 backdrop-blur-sm border-b border-gray-200"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.4 }}
+        >
           <div className="container mx-auto px-4 py-3">
-            <div className="flex items-center justify-between">
+            <motion.div 
+              className="flex items-center justify-between"
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+            >
               <div className="flex items-center space-x-6">
-                <img src={reaLogo} alt="R&A Logo" className="h-20 w-auto" />
-                <div className="hidden md:flex items-center space-x-4 text-sm text-gray-600">
-                  <div className="flex items-center space-x-1">
+                <motion.img 
+                  src={reaLogo} 
+                  alt="R&A Logo" 
+                  className="h-20 w-auto transition-transform duration-300 hover:scale-105" 
+                  variants={scaleIn}
+                />
+                <motion.div 
+                  className="hidden md:flex items-center space-x-4 text-sm text-gray-600"
+                  variants={fadeInUp}
+                >
+                  <motion.div 
+                    className="flex items-center space-x-1 hover:text-green-600 transition-colors duration-200"
+                    whileHover={{ scale: 1.05 }}
+                  >
                     <Shield className="w-4 h-4 text-green-600" />
                     <span>Empresa Amiga da Natureza</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
+                  </motion.div>
+                  <motion.div 
+                    className="flex items-center space-x-1 hover:text-blue-600 transition-colors duration-200"
+                    whileHover={{ scale: 1.05 }}
+                  >
                     <Award className="w-4 h-4 text-blue-600" />
                     <span>Certificação ISO</span>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               </div>
-              <div className="flex items-center space-x-4">
+              <motion.div 
+                className="flex items-center space-x-4"
+                variants={fadeInUp}
+              >
                 <div className="hidden md:block text-right text-sm">
                   <div className="text-gray-600">Atendimento</div>
                   <div className="font-semibold text-gray-900">(27) 99999-9999</div>
                 </div>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Contato
-                </Button>
-              </div>
-            </div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white transition-all duration-200 shadow-lg hover:shadow-xl">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Contato
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Barra Inferior - Navegação */}
-        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+        <motion.div 
+          className="bg-gradient-to-r from-green-600 to-green-700 text-white"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.4 }}
+        >
           <div className="container mx-auto px-4">
-            <nav className="flex items-center space-x-8 py-3">
-              <a href="#home" className="hover:text-green-200 font-medium transition-colors">Início</a>
-              <a href="#services" className="hover:text-green-200 font-medium transition-colors">Serviços</a>
-              <a href="#clients" className="hover:text-green-200 font-medium transition-colors">Clientes</a>
-              <a href="#about" className="hover:text-green-200 font-medium transition-colors">Sobre</a>
-              <a href="#contact" className="hover:text-green-200 font-medium transition-colors">Contato</a>
-              <div className="ml-auto hidden md:block">
+            <motion.nav 
+              className="flex items-center space-x-8 py-3"
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+            >
+              <motion.a 
+                href="#home" 
+                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+              >
+                Início
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.a>
+              <motion.a 
+                href="#services" 
+                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+              >
+                Serviços
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.a>
+              <motion.a 
+                href="#clients" 
+                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+              >
+                Clientes
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.a>
+              <motion.a 
+                href="#about" 
+                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+              >
+                Sobre
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.a>
+              <motion.a 
+                href="#contact" 
+                className="hover:text-green-200 font-medium transition-all duration-200 relative group"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+              >
+                Contato
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.a>
+              <motion.div 
+                className="ml-auto hidden md:block"
+                variants={fadeInUp}
+              >
                 <span className="text-green-200 text-sm">Sooretama/ES</span>
-              </div>
-            </nav>
+              </motion.div>
+            </motion.nav>
           </div>
-        </div>
-      </header>
+        </motion.div>
+      </motion.header>
 
       {/* Hero Section */}
       <motion.section
         id="home"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
         className="relative py-20 overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
       >
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200">
-                  <Leaf className="w-4 h-4 mr-1" />
-                  Empresa Amiga da Natureza
-                </Badge>
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <motion.div 
+            className="grid lg:grid-cols-2 gap-12 items-center"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div className="space-y-8" variants={fadeInUp}>
+              <motion.div className="space-y-4" variants={staggerContainer}>
+                <motion.div variants={scaleIn}>
+                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200 transition-all duration-200">
+                    <Leaf className="w-4 h-4 mr-1" />
+                    Empresa Amiga da Natureza
+                  </Badge>
+                </motion.div>
+                <motion.h1 
+                  className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                  variants={fadeInUp}
+                >
                   R&A Serviços e 
-                  <span className="text-orange-500"> Manutenções </span>
-                  <span className="text-blue-600">Elétricas</span>
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                  <motion.span 
+                    className="text-orange-500"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.2, duration: 0.5 }}
+                  > Manutenções </motion.span>
+                  <motion.span 
+                    className="text-blue-600"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.4, duration: 0.5 }}
+                  >Elétricas</motion.span>
+                </motion.h1>
+                <motion.p 
+                  className="text-xl text-gray-600 leading-relaxed"
+                  variants={fadeInUp}
+                >
                   Especializada em prestação de serviços de intervenção em vegetação em linha de transmissão 
                   e redes de distribuição de MT/BT, oferecendo soluções seguras e sustentáveis para o setor elétrico.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3">
-                  Nossos Serviços
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2">
-                  Saiba Mais
-                </Button>
-              </div>
-              <div className="grid grid-cols-3 gap-8 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">15+</div>
+                </motion.p>
+              </motion.div>
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4"
+                variants={fadeInUp}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-200">
+                    Nossos Serviços
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-2 hover:bg-gray-50 transition-all duration-200">
+                    Saiba Mais
+                  </Button>
+                </motion.div>
+              </motion.div>
+              <motion.div 
+                className="grid grid-cols-3 gap-8 pt-8"
+                variants={staggerContainer}
+              >
+                <motion.div 
+                  className="text-center group"
+                  variants={scaleIn}
+                  whileHover={{ y: -5 }}
+                >
+                  <motion.div 
+                    className="text-3xl font-bold text-blue-600 group-hover:scale-110 transition-transform duration-200"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.6, type: "spring", stiffness: 200 }}
+                  >15+</motion.div>
                   <div className="text-sm text-gray-600">Anos de Experiência</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-500">100%</div>
+                </motion.div>
+                <motion.div 
+                  className="text-center group"
+                  variants={scaleIn}
+                  whileHover={{ y: -5 }}
+                >
+                  <motion.div 
+                    className="text-3xl font-bold text-orange-500 group-hover:scale-110 transition-transform duration-200"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.8, type: "spring", stiffness: 200 }}
+                  >100%</motion.div>
                   <div className="text-sm text-gray-600">Segurança</div>
-                </div>
-
-              </div>
-            </div>
-            <div className="relative">
-              <img 
+                </motion.div>
+                <motion.div 
+                  className="text-center group"
+                  variants={scaleIn}
+                  whileHover={{ y: -5 }}
+                >
+                  <motion.div 
+                    className="text-3xl font-bold text-green-600 group-hover:scale-110 transition-transform duration-200"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 2.0, type: "spring", stiffness: 200 }}
+                  >24/7</motion.div>
+                  <div className="text-sm text-gray-600">Suporte</div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+            <motion.div 
+              className="relative"
+              variants={fadeInUp}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
+              <motion.img 
                 src={vegetationIntervention} 
                 alt="Intervenção em Vegetação" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
+              <motion.div 
+                className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg"
+                initial={{ opacity: 0, y: 20, x: -20 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
                 <div className="flex items-center space-x-3">
-                  <Shield className="w-8 h-8 text-green-600" />
+                  <motion.div
+                    animate={{ rotate: [0, 5, -5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  >
+                    <Shield className="w-8 h-8 text-green-600" />
+                  </motion.div>
                   <div>
                     <div className="font-semibold text-gray-900">Certificação ISO</div>
                     <div className="text-sm text-gray-600">Qualidade Garantida</div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </motion.section>
 
       {/* Services Section */}
       <motion.section
         id="services"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-gradient-to-r from-green-600 to-blue-600 text-white mb-4 px-6 py-2">
-              Nossos Serviços
-            </Badge>
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">
+          <motion.div 
+            className="text-center mb-16"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div variants={scaleIn}>
+              <Badge className="bg-gradient-to-r from-green-600 to-blue-600 text-white mb-4 px-6 py-2 hover:scale-105 transition-transform duration-200">
+                Nossos Serviços
+              </Badge>
+            </motion.div>
+            <motion.h2 
+              className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6"
+              variants={fadeInUp}
+            >
               Serviços Especializados
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+              variants={fadeInUp}
+            >
               Soluções sustentáveis e especializadas para o setor elétrico, sempre priorizando o equilíbrio ambiental
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           
           {/* Hero Image Section */}
-          <div className="relative mb-16">
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-              <img 
+          <motion.div 
+            className="relative mb-16"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            <motion.div 
+              className="relative overflow-hidden rounded-3xl shadow-2xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.img 
                 src={vegetationIntervention} 
                 alt="Limpeza de Faixa de Servidão" 
                 className="w-full h-96 object-cover"
+                initial={{ scale: 1.1 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-blue-900/60"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
+              <motion.div 
+                className="absolute inset-0 flex items-center justify-center"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <div className="text-center text-white">
-                  <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
+                  <motion.div 
+                    className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
+                    variants={scaleIn}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                  >
                     <Scissors className="w-12 h-12 text-white" />
-                  </div>
-                  <h3 className="text-4xl font-bold mb-4">Limpeza de Faixa de Servidão</h3>
-                  <p className="text-xl opacity-90 max-w-2xl">
+                  </motion.div>
+                  <motion.h3 
+                    className="text-4xl font-bold mb-4"
+                    variants={fadeInUp}
+                  >
+                    Limpeza de Faixa de Servidão
+                  </motion.h3>
+                  <motion.p 
+                    className="text-xl opacity-90 max-w-2xl"
+                    variants={fadeInUp}
+                  >
                     Serviços manuais especializados para manutenção de linhas de transmissão e redes de distribuição
-                  </p>
+                  </motion.p>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group cursor-pointer"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+              <motion.div 
+                className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
                 <TreePine className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900">Limpeza Manual</h4>
-              <p className="text-gray-600 text-sm">Remoção manual de vegetação em faixas de servidão</p>
+              </motion.div>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-green-600 transition-colors">Limpeza Manual</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Remoção manual de vegetação em faixas de servidão</p>
             </motion.div>
 
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group cursor-pointer"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                 <Scissors className="w-8 h-8 text-white" />
@@ -234,7 +544,7 @@ function App() {
               <h4 className="font-bold text-lg mb-2 text-gray-900">Recuperação</h4>
               <p className="text-gray-600 text-sm">Recuperação de acessos a linhas de transmissão</p>
             </motion.div>
-          </div>
+          </motion.div>
 
           {/* Environmental Commitment */}
           <div className="relative">
@@ -262,97 +572,310 @@ function App() {
       {/* Clients Section */}
       <motion.section
         id="clients"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        className="py-20 bg-gray-50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="py-20 bg-gray-50"
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-orange-100 text-orange-800 mb-4">
-              Nossos Clientes
-            </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <motion.div 
+            className="text-center mb-16"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div variants={scaleIn}>
+              <Badge className="bg-orange-100 text-orange-800 mb-4 hover:bg-orange-200 transition-all duration-200">
+                Nossos Clientes
+              </Badge>
+            </motion.div>
+            <motion.h2 
+              className="text-4xl font-bold text-gray-900 mb-4"
+              variants={fadeInUp}
+            >
               Parcerias de Sucesso
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              variants={fadeInUp}
+            >
               A confiança nos nossos serviços geraram parcerias de muito sucesso
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           
-          <div className="relative overflow-hidden py-8">
-            {/* Gradientes de fade nas laterais */}
-            <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
-            <div className="flex space-x-8 items-center animate-scroll-smooth">
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              {/* Duplicando para efeito contínuo */}
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              {/* Terceira cópia para transição imperceptível */}
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
-          </div>
+          <motion.div 
+            className="relative overflow-hidden py-8"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            {/* Gradientes de fade nas laterais - mais suaves */}
+            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none"></div>
+            
+            <motion.div 
+              className="flex space-x-8 items-center animate-scroll-smooth"
+              style={{ willChange: 'transform' }}
+            >
+              {/* Primeira série de logos */}
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              {/* Segunda série para continuidade */}
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              {/* Terceira série para transição imperceptível */}
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -8,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110" />
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </motion.section>
 

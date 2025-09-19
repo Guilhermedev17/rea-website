@@ -120,7 +120,7 @@
 }
 
 
-/* Animação suave para carrossel sem pulos */
+/* Animação suave para carrossel sem pulos - otimizada */
 @keyframes scroll-smooth {
   0% {
     transform: translateX(-33.33%);
@@ -131,6 +131,24 @@
 }
 
 .animate-scroll-smooth {
-  animation: scroll-smooth 60s linear infinite;
+  animation: scroll-smooth 45s linear infinite;
   width: 300%;
+  will-change: transform;
+}
+
+/* Pausa a animação no hover para melhor interação */
+.animate-scroll-smooth:hover {
+  animation-play-state: paused;
+}
+
+/* Melhora a performance das animações */
+* {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Transições suaves globais */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
