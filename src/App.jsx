@@ -231,7 +231,7 @@ function App() {
                 <Wrench className="w-8 h-8 text-white" />
               </div>
               <h4 className="font-bold text-lg mb-2 text-gray-900">Recuperação</h4>
-              <p className="text-gray-600 text-sm">Recuperação de estradas de acesso</p>
+              <p className="text-gray-600 text-sm">Recuperação de acessos a linhas de transmissão</p>
             </motion.div>
           </div>
 
@@ -256,49 +256,7 @@ function App() {
         </div>
       </motion.section>
 
-      {/* Additional Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Serviços Complementares
-            </h3>
-            <p className="text-lg text-gray-600">
-              Serviços adicionais especializados para infraestrutura elétrica
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center mb-3">
-                <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
-                  <Scissors className="w-5 h-5 text-orange-500" />
-                </div>
-                <h4 className="font-semibold text-gray-900">Reabertura de Faixa Manual</h4>
-              </div>
-              <p className="text-sm text-gray-600">Serviços manuais especializados de reabertura de faixas de servidão</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center mb-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                  <Shield className="w-5 h-5 text-blue-500" />
-                </div>
-                <h4 className="font-semibold text-gray-900">Instalação de Colchetes</h4>
-              </div>
-              <p className="text-sm text-gray-600">Instalação especializada de sistemas de fixação</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center mb-3">
-                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <Zap className="w-5 h-5 text-green-500" />
-                </div>
-                <h4 className="font-semibold text-gray-900">Aterramento e Seccionamento</h4>
-              </div>
-              <p className="text-sm text-gray-600">Instalação de aterramento e seccionamento de cercas</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Clients Section */}
       <motion.section
