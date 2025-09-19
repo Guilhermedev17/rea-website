@@ -118,3 +118,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Animação suave para carrossel sem pulos */
+@keyframes scroll-smooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-smooth {
+  animation: scroll-smooth 40s linear infinite;
+  width: 200%;
+}
