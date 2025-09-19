@@ -277,10 +277,11 @@ function App() {
                 </motion.p>
               </motion.div>
               <motion.div 
-                className="flex justify-center"
-                variants={fadeInUp}
+                className="flex flex-col items-center space-y-6"
+                variants={staggerContainer}
               >
                 <motion.div
+                  variants={fadeInUp}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -288,11 +289,7 @@ function App() {
                     Nossos Serviços
                   </Button>
                 </motion.div>
-              </motion.div>
-              <motion.div 
-                className="flex justify-center pt-8"
-                variants={staggerContainer}
-              >
+                
                 <motion.div 
                   className="text-center group"
                   variants={scaleIn}
