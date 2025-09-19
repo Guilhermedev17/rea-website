@@ -281,7 +281,7 @@ function App() {
             </p>
           </div>
           
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden py-8">
             <div className="flex space-x-8 items-center animate-scroll-smooth">
               <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
                 <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
