@@ -123,10 +123,10 @@
 /* Animação suave para carrossel sem pulos */
 @keyframes scroll-smooth {
   0% {
-    transform: translateX(0);
+    transform: translateX(-33.33%);
   }
   100% {
-    transform: translateX(-33.33%);
+    transform: translateX(0);
   }
 }
 

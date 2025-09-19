@@ -286,70 +286,70 @@ function App() {
             <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
             <div className="flex space-x-8 items-center animate-scroll-smooth">
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
               {/* Duplicando para efeito contínuo */}
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
               {/* Terceira cópia para transição imperceptível */}
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
+              <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32 group">
+                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
           </div>
