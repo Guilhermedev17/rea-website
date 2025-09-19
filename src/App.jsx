@@ -28,23 +28,51 @@ function App() {
       className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50"
     >
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <img src={reaLogo} alt="R&A Logo" className="h-16 w-auto" />
+      <header className="sticky top-0 z-50">
+        {/* Barra Superior - Logo e Informações */}
+        <div className="bg-white border-b border-gray-200">
+          <div className="container mx-auto px-4 py-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-6">
+                <img src={reaLogo} alt="R&A Logo" className="h-20 w-auto" />
+                <div className="hidden md:flex items-center space-x-4 text-sm text-gray-600">
+                  <div className="flex items-center space-x-1">
+                    <Shield className="w-4 h-4 text-green-600" />
+                    <span>Empresa Amiga da Natureza</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <Award className="w-4 h-4 text-blue-600" />
+                    <span>Certificação ISO</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="hidden md:block text-right text-sm">
+                  <div className="text-gray-600">Atendimento</div>
+                  <div className="font-semibold text-gray-900">(27) 99999-9999</div>
+                </div>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Contato
+                </Button>
+              </div>
             </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Início</a>
-              <a href="#services" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Serviços</a>
-              <a href="#clients" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Clientes</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Sobre</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contato</a>
+          </div>
+        </div>
+        
+        {/* Barra Inferior - Navegação */}
+        <div className="bg-gradient-to-r from-green-600 to-green-700 text-white">
+          <div className="container mx-auto px-4">
+            <nav className="flex items-center space-x-8 py-3">
+              <a href="#home" className="hover:text-green-200 font-medium transition-colors">Início</a>
+              <a href="#services" className="hover:text-green-200 font-medium transition-colors">Serviços</a>
+              <a href="#clients" className="hover:text-green-200 font-medium transition-colors">Clientes</a>
+              <a href="#about" className="hover:text-green-200 font-medium transition-colors">Sobre</a>
+              <a href="#contact" className="hover:text-green-200 font-medium transition-colors">Contato</a>
+              <div className="ml-auto hidden md:block">
+                <span className="text-green-200 text-sm">Sooretama/ES</span>
+              </div>
             </nav>
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              <Phone className="w-4 h-4 mr-2" />
-              Contato
-            </Button>
           </div>
         </div>
       </header>
