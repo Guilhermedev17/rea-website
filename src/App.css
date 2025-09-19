@@ -136,10 +136,7 @@
   will-change: transform;
 }
 
-/* Pausa a animação no hover para melhor interação */
-.animate-scroll-smooth:hover {
-  animation-play-state: paused;
-}
+
 
 /* Melhora a performance das animações */
 * {

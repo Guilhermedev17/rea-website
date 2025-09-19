@@ -298,7 +298,7 @@ function App() {
                 </motion.div>
               </motion.div>
               <motion.div 
-                className="grid grid-cols-3 gap-8 pt-8"
+                className="grid grid-cols-2 gap-8 pt-8"
                 variants={staggerContainer}
               >
                 <motion.div 
@@ -329,20 +329,7 @@ function App() {
                   >100%</motion.div>
                   <div className="text-sm text-gray-600">Segurança</div>
                 </motion.div>
-                <motion.div 
-                  className="text-center group"
-                  variants={scaleIn}
-                  whileHover={{ y: -5 }}
-                >
-                  <motion.div 
-                    className="text-3xl font-bold text-green-600 group-hover:scale-110 transition-transform duration-200"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 2.0, type: "spring", stiffness: 200 }}
-                  >24/7</motion.div>
-                  <div className="text-sm text-gray-600">Suporte</div>
-                </motion.div>
+
               </motion.div>
             </motion.div>
             <motion.div 
@@ -486,7 +473,7 @@ function App() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div 
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group cursor-pointer"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group "
               variants={scaleIn}
               whileHover={{ 
                 y: -15, 
@@ -507,7 +494,7 @@ function App() {
             </motion.div>
 
             <motion.div 
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group cursor-pointer"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group"
               variants={scaleIn}
               whileHover={{ 
                 y: -15, 
@@ -516,33 +503,57 @@ function App() {
               }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+              <motion.div 
+                className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Scissors className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900">Reabertura Manual</h4>
-              <p className="text-gray-600 text-sm">Reabertura especializada de faixas de servidão</p>
+              </motion.div>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">Reabertura Manual</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Reabertura especializada de faixas de servidão</p>
             </motion.div>
 
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+              <motion.div 
+                className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
                 <TreePine className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900">Poda Técnica</h4>
-              <p className="text-gray-600 text-sm">Poda e corte especializado de árvores</p>
+              </motion.div>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">Poda Técnica</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Poda e corte especializado de árvores</p>
             </motion.div>
 
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+              <motion.div 
+                className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Wrench className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900">Recuperação</h4>
-              <p className="text-gray-600 text-sm">Recuperação de acessos a linhas de transmissão</p>
+              </motion.div>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">Recuperação</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acessos a linhas de transmissão</p>
             </motion.div>
           </motion.div>
 
@@ -622,7 +633,7 @@ function App() {
             >
               {/* Primeira série de logos */}
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -634,7 +645,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -646,7 +657,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -658,7 +669,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -670,7 +681,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -682,7 +693,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -694,7 +705,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -707,7 +718,7 @@ function App() {
               
               {/* Segunda série para continuidade */}
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -719,7 +730,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -731,7 +742,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -743,7 +754,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -755,7 +766,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -767,7 +778,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -779,7 +790,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -792,7 +803,7 @@ function App() {
               
               {/* Terceira série para transição imperceptível */}
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -804,7 +815,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -816,7 +827,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -828,7 +839,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -840,7 +851,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -852,7 +863,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
@@ -864,7 +875,7 @@ function App() {
               </motion.div>
               
               <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group cursor-pointer"
+                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
                   scale: 1.05, 
                   y: -8,
