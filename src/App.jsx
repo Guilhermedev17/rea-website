@@ -397,7 +397,7 @@ function App() {
                     className="text-4xl font-bold mb-4"
                     variants={fadeInUp}
                   >
-                    Limpeza de Faixa de Servidão
+                    Supressão em vegetação manual
                   </motion.h3>
                   <motion.p 
                     className="text-xl opacity-90 max-w-2xl"
