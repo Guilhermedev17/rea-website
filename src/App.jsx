@@ -29,10 +29,10 @@ function App() {
     >
       {/* Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <img src={reaLogo} alt="R&A Logo" className="h-32 w-auto max-w-xs" />
+              <img src={reaLogo} alt="R&A Logo" className="h-16 w-auto" />
             </div>
             <nav className="hidden md:flex space-x-8">
               <a href="#home" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Início</a>
@@ -439,7 +439,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <img src={reaLogo} alt="R&A Logo" className="h-32 w-auto max-w-xs" />
+              <img src={reaLogo} alt="R&A Logo" className="h-16 w-auto" />
               <p className="text-gray-400 text-sm">
                 Especializada em serviços elétricos com foco na segurança, qualidade e preservação ambiental.
               </p>
