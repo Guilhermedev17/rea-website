@@ -282,6 +282,9 @@ function App() {
           </div>
           
           <div className="relative overflow-hidden py-8">
+            {/* Gradientes de fade nas laterais */}
+            <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
             <div className="flex space-x-8 items-center animate-scroll-smooth">
               <div className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 min-w-[240px] h-32">
                 <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 hover:opacity-100 transition-opacity" />
