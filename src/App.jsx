@@ -412,32 +412,12 @@ function App() {
 
           {/* Services Grid */}
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+            className="grid md:grid-cols-3 gap-6 mb-16"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <motion.div 
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group "
-              variants={scaleIn}
-              whileHover={{ 
-                y: -15, 
-                scale: 1.05,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-              }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-            >
-              <motion.div 
-                className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4"
-                whileHover={{ rotate: 5, scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <TreePine className="w-8 h-8 text-white" />
-              </motion.div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-green-600 transition-colors">Limpeza Manual</h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Remoção manual de vegetação em faixas de servidão</p>
-            </motion.div>
 
             <motion.div 
               className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group"
