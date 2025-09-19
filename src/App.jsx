@@ -961,52 +961,124 @@ function App() {
       {/* Contact Section */}
       <motion.section
         id="contact"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        className="py-16 bg-gradient-to-br from-gray-50 to-blue-50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="py-12 bg-gradient-to-br from-blue-600 to-blue-800 text-white"
       >
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Entre em Contato</h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+          <motion.div 
+            className="text-center mb-12"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div variants={scaleIn}>
+              <Badge className="bg-green-100 text-green-800 mb-4 hover:bg-green-200 transition-all duration-200">
+                Entre em Contato
+              </Badge>
+            </motion.div>
+            <motion.h2 
+              className="text-3xl font-bold text-gray-900 mb-4"
+              variants={fadeInUp}
+            >
+              Fale Conosco
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              variants={fadeInUp}
+            >
               Estamos prontos para atender suas necessidades em serviços elétricos especializados
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
-              <CardContent className="p-8 text-center">
-                <Phone className="w-12 h-12 mx-auto mb-4 text-orange-400" />
-                <h3 className="text-xl font-semibold mb-2">Telefone</h3>
-                <p className="opacity-90">(27) 99874-6554</p>
-              </CardContent>
-            </Card>
+          <motion.div 
+            className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div 
+              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -5,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mx-auto mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Phone className="w-6 h-6 text-white" />
+              </motion.div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">Telefone</h3>
+              <p className="text-gray-600">(27) 99874-6554</p>
+            </motion.div>
             
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
-              <CardContent className="p-8 text-center">
-                <Mail className="w-12 h-12 mx-auto mb-4 text-orange-400" />
-                <h3 className="text-xl font-semibold mb-2">E-mail</h3>
-                <p className="opacity-90">rea@rea.srv.br</p>
-              </CardContent>
-            </Card>
+            <motion.div 
+              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -5,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Mail className="w-6 h-6 text-white" />
+              </motion.div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">E-mail</h3>
+              <p className="text-gray-600">rea@rea.srv.br</p>
+            </motion.div>
             
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white">
-              <CardContent className="p-8 text-center">
-                <MapPin className="w-12 h-12 mx-auto mb-4 text-orange-400" />
-                <h3 className="text-xl font-semibold mb-2">Endereço</h3>
-                <p className="opacity-90">Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</p>
-              </CardContent>
-            </Card>
-          </div>
+            <motion.div 
+              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -5,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mx-auto mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <MapPin className="w-6 h-6 text-white" />
+              </motion.div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">Endereço</h3>
+              <p className="text-gray-600 text-sm">Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</p>
+            </motion.div>
+          </motion.div>
           
-          <div className="text-center mt-12">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3">
-              <Mail className="w-5 h-5 mr-2" />
-              Solicitar Orçamento
-            </Button>
-          </div>
+          <motion.div 
+            className="text-center mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-200">
+                <Mail className="w-5 h-5 mr-2" />
+                Solicitar Orçamento
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </motion.section>
 
