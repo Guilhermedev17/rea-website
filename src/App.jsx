@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, TreePine, Wrench, HardHat, Leaf } from 'lucide-react'
+import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, TreePine, Wrench, HardHat, Leaf, Building, MessageCircle } from 'lucide-react'
 import './App.css'
 
 // Import das imagens
@@ -512,9 +512,10 @@ function App() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={scaleIn}>
-              <Badge className="bg-orange-100 text-orange-800 mb-4 hover:bg-orange-200 transition-opacity duration-200">
-                Nossos Clientes
-              </Badge>
+              <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 mb-4">
+                <Users className="w-4 h-4 mr-2" />
+                <span className="font-semibold">Nossos Clientes</span>
+              </div>
             </motion.div>
             <motion.h2 
               className="text-4xl font-bold text-gray-900 mb-4"
@@ -725,9 +726,10 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <Badge className="bg-blue-100 text-blue-800 mb-4">
-                  Nossa Empresa
-                </Badge>
+                <div className="inline-flex items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 mb-4">
+                  <Building className="w-4 h-4 mr-2" />
+                  <span className="font-semibold">Nossa Empresa</span>
+                </div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-6">
                   R&A Serviços e Manutenções Elétricas
                 </h2>
@@ -798,9 +800,10 @@ function App() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={scaleIn}>
-              <Badge className="bg-green-100 text-green-800 mb-4 hover:bg-green-200 transition-all duration-200">
-                Entre em Contato
-              </Badge>
+              <div className="inline-flex items-center bg-gradient-to-r from-green-500 to-teal-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 mb-4">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                <span className="font-semibold">Entre em Contato</span>
+              </div>
             </motion.div>
             <motion.h2 
               className="text-3xl font-bold text-gray-900 mb-4"
