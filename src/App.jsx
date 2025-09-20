@@ -360,7 +360,7 @@ function App() {
                       letterSpacing: '0.5px'
                     }}
                   >
-                    Supressão em Vegetação Manual
+                    Serviços Especializados
                   </motion.h3>
                   <motion.p 
                     className="text-xl opacity-90 max-w-2xl leading-relaxed"
@@ -371,7 +371,7 @@ function App() {
                       fontWeight: '400'
                     }}
                   >
-                    Poda e supressão seletiva de vegetação em faixas de servidão elétrica
+                    Soluções sustentáveis e especializadas para o setor elétrico, sempre priorizando o equilíbrio ambiental
                   </motion.p>
                 </div>
               </motion.div>
