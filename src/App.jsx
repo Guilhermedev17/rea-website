@@ -11,6 +11,8 @@ import './scroll-fix.css'
 import reaLogo from './assets/rea_logo_transparent_final.png'
 import reaLogoNova from './assets/rea_logo_nova_oficial.jpg'
 import reaLogoTransparente from './assets/rea_logo_nova_transparente.png'
+import reaLogoClean from './assets/rea_logo_clean.jpg'
+import reaLogoTransparentClean from './assets/rea_logo_transparent_clean.png'
 import neoenergia from './assets/neoenergia_logo_new_transparent.png'
 import neoenergiaNew from './assets/neoenergia_logo_nova.png'
 import neoenergiaOficial from './assets/neoenergia_logo_oficial.png'
@@ -26,6 +28,11 @@ import coelbaLogo from './assets/coelba_logo.png'
 import vegetationIntervention from './assets/vegetation_intervention_real.jpeg'
 import electricalMaintenance from './assets/electrical_network_maintenance_real.jpeg'
 import electricalSafety from './assets/electrical_safety_real.png'
+import empresaImagem1 from './assets/imagem1.jpg'
+import empresaImagem2 from './assets/imagem2.jpg'
+import empresaImagem3 from './assets/imagem3.jpg'
+import empresaImagem4 from './assets/imagem4.jpg'
+import empresaImagem5 from './assets/imagem5.jpeg'
 import aboutSectionImage from './assets/about_section_image.jpg'
 import vegetationManagementHQ from './assets/vegetation_management_high_quality.jpg'
 
@@ -82,6 +89,165 @@ const scaleIn = {
       ease: [0.25, 0.46, 0.45, 0.94]
     }
   }
+}
+
+// Componente Carousel das fotos da empresa
+function EmpresaCarousel() {
+  const [currentImage, setCurrentImage] = React.useState(0)
+  const [isLoading, setIsLoading] = React.useState(true)
+  const [isPaused, setIsPaused] = React.useState(false)
+  const [loadedImages, setLoadedImages] = React.useState(new Set())
+  
+  const images = [
+    {
+      src: empresaImagem1,
+      alt: "Equipe R&A em Treinamento de Segurança"
+    },
+    {
+      src: empresaImagem2,
+      alt: "Profissional R&A com Veículo da Empresa"
+    },
+    {
+      src: empresaImagem3,
+      alt: "Equipe R&A com Veículos e Equipamentos"
+    },
+    {
+      src: empresaImagem4,
+      alt: "Frota de Veículos R&A"
+    },
+    {
+      src: empresaImagem5,
+      alt: "Equipe R&A em Treinamento de Altura"
+    }
+  ]
+
+  // Preload das imagens
+  React.useEffect(() => {
+    const preloadImages = () => {
+      images.forEach((image, index) => {
+        const img = new Image()
+        img.onload = () => {
+          setLoadedImages(prev => new Set([...prev, index]))
+          if (index === 0) setIsLoading(false) // Primeira imagem carregada
+        }
+        img.src = image.src
+      })
+    }
+    preloadImages()
+  }, [])
+
+  // Timer do carousel com pause
+  React.useEffect(() => {
+    if (isPaused) return
+    
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length)
+    }, 4000)
+    
+    return () => clearInterval(timer)
+  }, [images.length, isPaused])
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+  }
+
+  return (
+    <div 
+      className="relative rounded-2xl shadow-2xl overflow-hidden bg-gray-200"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Loading Skeleton */}
+      {isLoading && (
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse">
+          <div className="w-full h-96 bg-gray-300 flex items-center justify-center">
+            <div className="text-gray-500 text-lg font-medium">Carregando fotos...</div>
+          </div>
+        </div>
+      )}
+
+      {/* Container das imagens com slide */}
+      <div className="relative w-full h-96 overflow-hidden">
+        <motion.div 
+          className="flex w-full h-full"
+          animate={{ x: `-${currentImage * 100}%` }}
+          transition={{ 
+            type: "spring", 
+            stiffness: 300, 
+            damping: 30,
+            duration: 0.6 
+          }}
+        >
+          {images.map((image, index) => (
+            <motion.div
+              key={index}
+              className="min-w-full h-full relative"
+            >
+              <motion.img 
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+                style={{ 
+                  opacity: loadedImages.has(index) ? 1 : 0,
+                  transition: 'opacity 0.3s ease-in-out'
+                }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Setas de navegação */}
+      <button
+        onClick={prevImage}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 transition-all duration-200 opacity-0 group-hover:opacity-100"
+        style={{ opacity: isPaused ? 1 : 0 }}
+      >
+        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      
+      <button
+        onClick={nextImage}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 transition-all duration-200"
+        style={{ opacity: isPaused ? 1 : 0 }}
+      >
+        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      
+      {/* Indicadores */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImage(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentImage 
+                ? 'bg-white shadow-lg scale-110' 
+                : 'bg-white/50 hover:bg-white/75 hover:scale-105'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Indicador de pause */}
+      {isPaused && (
+        <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+          <span className="text-white text-sm font-medium">⏸️ Pausado</span>
+        </div>
+      )}
+    </div>
+  )
 }
 
 function App() {
@@ -290,13 +456,7 @@ function App() {
               viewport={{ once: true }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <motion.img 
-                src={vegetationIntervention} 
-                alt="Intervenção em Vegetação" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              />
+              <EmpresaCarousel />
             </motion.div>
           </motion.div>
         </div>
@@ -330,7 +490,7 @@ function App() {
               <motion.img 
                 src={vegetationManagementHQ} 
                 alt="Supressão em vegetação manual" 
-                className="w-full h-96 object-cover"
+                className="w-full h-64 object-cover"
                 initial={{ scale: 1.1 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
@@ -724,59 +884,63 @@ function App() {
         className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
       >
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <div className="inline-flex items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 mb-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="space-y-10">
+              <div className="text-center max-w-4xl mx-auto">
+                <div className="inline-flex items-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 mb-6">
                   <Building className="w-4 h-4 mr-2" />
                   <span className="font-semibold">Nossa Empresa</span>
                 </div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
                   R&A Serviços e Manutenções Elétricas
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  A <strong>R&A SERVIÇOS E MANUTENÇÕES ELÉTRICAS</strong>, com sede em Sooretama/ES, é uma empresa especializada em prestação de serviços de intervenção em vegetação em linha de transmissão e redes de distribuição de MT/BT.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  A intervenção em vegetação é uma manutenção necessária, sem prejuízos ao meio ambiente, para que não haja risco de interrupção no fornecimento de energia quando ocorrem chuvas e ventos fortes.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Temos por objetivo oferecer toda a qualidade que os nossos clientes precisam, contando com uma equipe profissional que se empenha para inovar e crescer, com cursos específicos em Segurança, Meio Ambiente e Saúde do Trabalho garantindo a satisfação de nossos clientes.
-                </p>
+                
+                <div className="flex justify-center mb-8">
+                  <img 
+                    src={reaLogoTransparentClean} 
+                    alt="R&A Logo" 
+                    className="w-48 h-auto hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
+                <div className="space-y-6 text-gray-600 leading-relaxed text-left">
+                  <p>
+                    A <strong className="text-gray-900">R&A SERVIÇOS E MANUTENÇÕES ELÉTRICAS</strong>, com sede em Sooretama/ES, é uma empresa especializada em prestação de serviços de intervenção em vegetação em linha de transmissão e redes de distribuição de MT/BT.
+                  </p>
+                  <p>
+                    A intervenção em vegetação é uma manutenção necessária, sem prejuízos ao meio ambiente, para que não haja risco de interrupção no fornecimento de energia quando ocorrem chuvas e ventos fortes.
+                  </p>
+                  <p>
+                    Temos por objetivo oferecer toda a qualidade que os nossos clientes precisam, contando com uma equipe profissional que se empenha para inovar e crescer, com cursos específicos em Segurança, Meio Ambiente e Saúde do Trabalho garantindo a satisfação de nossos clientes.
+                  </p>
+                </div>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="text-center p-6 border-0 shadow-lg">
-                  <Award className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="font-semibold text-gray-900 mb-2">Missão</h3>
-                  <p className="text-sm text-gray-600">Prover excelência em nossos serviços, com agilidade, confiabilidade e inovação.</p>
+              <div className="grid md:grid-cols-3 gap-6 mt-12">
+                <Card className="text-center p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-3">Missão</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">Prover excelência em nossos serviços, com agilidade, confiabilidade e inovação.</p>
                 </Card>
                 
-                <Card className="text-center p-6 border-0 shadow-lg">
-                  <Zap className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-                  <h3 className="font-semibold text-gray-900 mb-2">Visão</h3>
-                  <p className="text-sm text-gray-600">Ser uma empresa de referência, reconhecida pelos clientes, colaboradores, comunidade e fornecedores, pela qualidade de nossos serviços.</p>
+                <Card className="text-center p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-3">Visão</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">Ser uma empresa de referência, reconhecida pelos clientes, colaboradores, comunidade e fornecedores, pela qualidade de nossos serviços.</p>
                 </Card>
                 
-                <Card className="text-center p-6 border-0 shadow-lg">
-                  <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="font-semibold text-gray-900 mb-2">Valores</h3>
-                  <p className="text-sm text-gray-600">Ética, Respeito, Profissionalismo, Transparência, Espírito de equipe, Humildade, Responsabilidade e Sustentabilidade.</p>
+                <Card className="text-center p-6 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-3">Valores</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">Ética, Respeito, Profissionalismo, Transparência, Espírito de equipe, Humildade, Responsabilidade e Sustentabilidade.</p>
                 </Card>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src={aboutSectionImage} 
-                alt="Nossa Equipe" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
-              <div className="absolute -top-6 -right-6 bg-white text-blue-600 p-6 rounded-xl shadow-lg border border-blue-600">
-                <div className="text-center">
-                  <div className="text-3xl font-bold">15+</div>
-                  <div className="text-sm opacity-90">Anos de Experiência</div>
-                </div>
               </div>
             </div>
           </div>
