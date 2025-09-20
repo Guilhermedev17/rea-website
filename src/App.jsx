@@ -9,6 +9,7 @@ import './App.css'
 // Import das imagens
 import reaLogo from './assets/rea_logo_transparent_final.png'
 import neoenergia from './assets/neoenergia_logo_new_transparent.png'
+import neoenergiaNew from './assets/neoenergia_logo_nova.png'
 import edpLogo from './assets/edp_logo_improved.png'
 import santaMaria from './assets/santa_maria_logo_new_transparent.png'
 import linharesGeracao from './assets/linhares_geracao_logo_new_transparent.png'
@@ -658,18 +659,6 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
                 <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
@@ -683,7 +672,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
+                <img src={neoenergiaNew} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
               </motion.div>
               
               <motion.div 
@@ -732,18 +721,6 @@ function App() {
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
@@ -817,18 +794,6 @@ function App() {
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={enevaLogo} alt="Eneva" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
               <motion.div 
