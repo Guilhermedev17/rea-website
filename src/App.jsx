@@ -13,6 +13,7 @@ import neoenergiaNew from './assets/neoenergia_logo_nova.png'
 import neoenergiaOficial from './assets/neoenergia_logo_oficial.png'
 import neoenergiaTransparente from './assets/neoenergia_logo_transparente.png'
 import neoenergiaFinalTransparente from './assets/neoenergia_logo_final_transparente.png'
+import neoenergiaNovaVersao from './assets/neoenergia_logo_nova_versao.png'
 import edpLogo from './assets/edp_logo_improved.png'
 import santaMaria from './assets/santa_maria_logo_new_transparent.png'
 import linharesGeracao from './assets/linhares_geracao_logo_new_transparent.png'
@@ -492,8 +493,8 @@ function App() {
               >
                 <Zap className="w-8 h-8 text-white" />
               </motion.div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">Recuperação de Acesso Vegetal</h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acesso vegetal, aterramento e seccionamento de cercas</p>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">Recuperação de Acesso Vegetação</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acesso vegetação, aterramento e seccionamento de cercas</p>
             </motion.div>
 
             <motion.div 
@@ -653,7 +654,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={neoenergiaFinalTransparente} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
+                <img src={neoenergiaNovaVersao} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
               </motion.div>
               
               <motion.div 
