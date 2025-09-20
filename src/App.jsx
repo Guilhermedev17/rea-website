@@ -888,23 +888,7 @@ function App() {
             </motion.div>
           </motion.div>
           
-          <motion.div 
-            className="text-center mt-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-200">
-                <Mail className="w-5 h-5 mr-2" />
-                Solicitar Orçamento
-              </Button>
-            </motion.div>
-          </motion.div>
+
         </div>
       </motion.section>
 
@@ -914,61 +898,61 @@ function App() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="bg-gray-900 text-white py-12"
+        className="bg-gradient-to-r from-green-700 to-blue-700 text-white py-8"
       >
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <img src={reaLogoTransparente} alt="R&A Logo" className="h-16 w-auto" />
-              <p className="text-gray-400 text-sm">
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="space-y-3">
+              <img src={reaLogoTransparente} alt="R&A Logo" className="h-12 w-auto" />
+              <p className="text-green-100 text-xs leading-relaxed">
                 Especializada em serviços elétricos com foco na segurança, qualidade e preservação ambiental.
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Serviços</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Intervenção em Vegetação</li>
-                <li>Manutenção de Redes MT/BT</li>
-                <li>Segurança e Treinamento</li>
-                <li>Consultoria Técnica</li>
+              <h4 className="font-semibold mb-3 text-sm">Serviços</h4>
+              <ul className="space-y-1 text-xs text-green-100">
+                <li>Supressão em Vegetação Manual</li>
+                <li>Poda e Corte de Árvores</li>
+                <li>Recuperação de Acesso Vegetação</li>
+                <li>Consertos de Porteiras</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Empresa</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>Sobre Nós</li>
-                <li>Nossa Equipe</li>
-                <li>Certificações</li>
-                <li>Sustentabilidade</li>
+              <h4 className="font-semibold mb-3 text-sm">Empresa</h4>
+              <ul className="space-y-1 text-xs text-green-100">
+                <li>15+ Anos de Experiência</li>
+                <li>Empresa Amiga da Natureza</li>
+                <li>Linhas de Transmissão</li>
+                <li>Redes de Distribuição MT/BT</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Contato</h4>
-              <div className="space-y-2 text-sm text-gray-400">
+              <h4 className="font-semibold mb-3 text-sm">Contato</h4>
+              <div className="space-y-1 text-xs text-green-100">
                 <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
+                  <Phone className="w-3 h-3 mr-2" />
                   (27) 99874-6554
                 </div>
                 <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
+                  <Mail className="w-3 h-3 mr-2" />
                   rea@rea.srv.br
                 </div>
                 <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
+                  <Mail className="w-3 h-3 mr-2" />
                   roberto@rea.srv.br
                 </div>
                 <div className="flex items-start">
-                  <MapPin className="w-4 h-4 mr-2 mt-1" />
-                  <span>Rua Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</span>
+                  <MapPin className="w-3 h-3 mr-2 mt-0.5" />
+                  <span>Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</span>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400">
+          <div className="border-t border-green-600/30 mt-6 pt-4 text-center text-xs text-green-100">
             <p>&copy; 2024 R&A Serviços e Manutenções Elétricas. Todos os direitos reservados.</p>
           </div>
         </div>
