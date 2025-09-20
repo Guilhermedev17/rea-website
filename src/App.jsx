@@ -19,6 +19,7 @@ import vegetationIntervention from './assets/vegetation_intervention_real.jpeg'
 import electricalMaintenance from './assets/electrical_network_maintenance_real.jpeg'
 import electricalSafety from './assets/electrical_safety_real.png'
 import aboutSectionImage from './assets/about_section_image.jpg'
+import vegetationManagementHQ from './assets/vegetation_management_high_quality.jpg'
 
 // Variantes de animação para melhor performance e suavidade
 const pageVariants = {
@@ -369,8 +370,8 @@ function App() {
               transition={{ duration: 0.3 }}
             >
               <motion.img 
-                src={vegetationIntervention} 
-                alt="Limpeza de Faixa de Servidão" 
+                src={vegetationManagementHQ} 
+                alt="Supressão em vegetação manual" 
                 className="w-full h-96 object-cover"
                 initial={{ scale: 1.1 }}
                 whileInView={{ scale: 1 }}
