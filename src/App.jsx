@@ -419,7 +419,7 @@ function App() {
                       fontWeight: '400'
                     }}
                   >
-                    Serviços manuais especializados para manutenção de linhas de transmissão e redes de distribuição
+                    Poda e supressão seletiva de vegetação em faixas de servidão elétrica
                   </motion.p>
                 </div>
               </motion.div>
