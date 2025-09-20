@@ -245,10 +245,15 @@ function App() {
             <motion.div className="space-y-8" variants={fadeInUp}>
               <motion.div className="space-y-4" variants={staggerContainer}>
                 <motion.div variants={scaleIn}>
-                  <Badge className="bg-orange-100 text-orange-800 hover:bg-orange-200 transition-opacity duration-200">
-                    <Leaf className="w-4 h-4 mr-1" />
-                    Empresa Amiga da Natureza
-                  </Badge>
+                  <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <motion.div
+                      animate={{ rotate: [0, 10, -10, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    >
+                      <Leaf className="w-4 h-4 mr-2" />
+                    </motion.div>
+                    <span className="font-semibold text-sm">Empresa Amiga da Natureza</span>
+                  </div>
                 </motion.div>
                 <motion.h1 
                   className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
