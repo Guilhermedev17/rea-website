@@ -8,6 +8,8 @@ import './App.css'
 
 // Import das imagens
 import reaLogo from './assets/rea_logo_transparent_final.png'
+import reaLogoNova from './assets/rea_logo_nova_oficial.jpg'
+import reaLogoTransparente from './assets/rea_logo_nova_transparente.png'
 import neoenergia from './assets/neoenergia_logo_new_transparent.png'
 import neoenergiaNew from './assets/neoenergia_logo_nova.png'
 import neoenergiaOficial from './assets/neoenergia_logo_oficial.png'
@@ -112,7 +114,7 @@ function App() {
             >
               <div className="flex items-center space-x-6">
                 <motion.img 
-                  src={reaLogo} 
+                  src={reaLogoTransparente} 
                   alt="R&A Logo" 
                   className="h-20 w-auto transition-transform duration-300 hover:scale-105" 
                   variants={scaleIn}
@@ -936,7 +938,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <img src={reaLogo} alt="R&A Logo" className="h-16 w-auto" />
+              <img src={reaLogoTransparente} alt="R&A Logo" className="h-16 w-auto" />
               <p className="text-gray-400 text-sm">
                 Especializada em serviços elétricos com foco na segurança, qualidade e preservação ambiental.
               </p>
