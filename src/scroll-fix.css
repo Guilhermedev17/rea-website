@@ -1,0 +1,31 @@
+/* Scroll suave com offset para compensar header fixo */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Ajusta para a altura do header */
+}
+
+/* Alternativa usando CSS para cada seção */
+#home {
+  scroll-margin-top: 120px;
+}
+
+#services {
+  scroll-margin-top: 120px;
+}
+
+#clients {
+  scroll-margin-top: 120px;
+}
+
+#about {
+  scroll-margin-top: 120px;
+}
+
+#contact {
+  scroll-margin-top: 120px;
+}
+
+/* Melhora a transição de scroll */
+* {
+  scroll-behavior: smooth;
+}

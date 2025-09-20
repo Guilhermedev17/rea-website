@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge.jsx'
 import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, TreePine, Wrench, HardHat, Leaf, Building, MessageCircle } from 'lucide-react'
 import './App.css'
+import './scroll-fix.css'
 
 // Import das imagens
 import reaLogo from './assets/rea_logo_transparent_final.png'
