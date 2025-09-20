@@ -137,20 +137,15 @@ function App() {
                 className="flex items-center space-x-4"
                 variants={fadeInUp}
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <a 
+                  href="https://wa.me/27998746554" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl font-medium hover:scale-105 active:scale-95"
                 >
-                  <a 
-                    href="https://wa.me/27998746554" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl font-medium"
-                  >
-                    <Phone className="w-4 h-4 mr-2" />
-                    WhatsApp
-                  </a>
-                </motion.div>
+                  <Phone className="w-4 h-4 mr-2" />
+                  WhatsApp
+                </a>
               </motion.div>
             </motion.div>
           </div>
@@ -269,7 +264,7 @@ function App() {
                     transition={{ delay: 1.2, duration: 0.5 }}
                   > Manutenções </motion.span>
                   <motion.span 
-                    className="text-blue-600"
+                    className="text-gray-900"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
