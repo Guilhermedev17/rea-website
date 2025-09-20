@@ -602,18 +602,6 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
                 <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
@@ -653,17 +641,7 @@ function App() {
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
+
               
               {/* Segunda série para continuidade */}
               <motion.div 
@@ -726,31 +704,7 @@ function App() {
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              {/* Terceira série para transição imperceptível */}
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={neoenergia} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
-              </motion.div>
-              
+              {/* Segunda série para transição imperceptível */}
               <motion.div 
                 className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
                 whileHover={{ 
@@ -799,17 +753,7 @@ function App() {
                 <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
               </motion.div>
               
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={coelbaLogo} alt="Coelba" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
+
             </motion.div>
           </motion.div>
         </div>
