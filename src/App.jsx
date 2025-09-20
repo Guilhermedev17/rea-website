@@ -395,14 +395,24 @@ function App() {
                     <Scissors className="w-12 h-12 text-white" />
                   </motion.div>
                   <motion.h3 
-                    className="text-4xl font-bold mb-4"
+                    className="text-4xl font-bold mb-4 tracking-wide"
                     variants={fadeInUp}
+                    style={{ 
+                      fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+                      textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+                      letterSpacing: '0.5px'
+                    }}
                   >
-                    Supressão em vegetação manual
+                    Supressão em Vegetação Manual
                   </motion.h3>
                   <motion.p 
-                    className="text-xl opacity-90 max-w-2xl"
+                    className="text-xl opacity-90 max-w-2xl leading-relaxed"
                     variants={fadeInUp}
+                    style={{ 
+                      fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+                      textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                      fontWeight: '400'
+                    }}
                   >
                     Serviços manuais especializados para manutenção de linhas de transmissão e redes de distribuição
                   </motion.p>
