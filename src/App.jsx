@@ -412,7 +412,7 @@ function App() {
 
           {/* Services Grid */}
           <motion.div 
-            className="grid md:grid-cols-3 gap-6 mb-16"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -435,8 +435,8 @@ function App() {
               >
                 <TreePine className="w-8 h-8 text-white" />
               </motion.div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-green-600 transition-colors">Limpeza Manual</h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Remoção manual de vegetação em faixas de servidão</p>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-green-600 transition-colors">Supressão em Vegetação Manual</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Remoção manual especializada de vegetação em faixas de servidão</p>
             </motion.div>
 
             <motion.div 
@@ -454,10 +454,31 @@ function App() {
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <TreePine className="w-8 h-8 text-white" />
+                <Scissors className="w-8 h-8 text-white" />
               </motion.div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">Poda Técnica</h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Poda e corte especializado de árvores</p>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">Poda e Corte de Árvores</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Poda e corte de árvores em linha de transmissão e redes de distribuição de energia elétrica</p>
+            </motion.div>
+
+            <motion.div 
+              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 group"
+              variants={scaleIn}
+              whileHover={{ 
+                y: -15, 
+                scale: 1.05,
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <motion.div 
+                className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Zap className="w-8 h-8 text-white" />
+              </motion.div>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">Recuperação de Acesso Vegetal</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acesso vegetal, aterramento e seccionamento de cercas</p>
             </motion.div>
 
             <motion.div 
@@ -477,8 +498,8 @@ function App() {
               >
                 <Wrench className="w-8 h-8 text-white" />
               </motion.div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">Recuperação</h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acessos a linhas de transmissão</p>
+              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">Consertos de Porteiras</h4>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Consertos especializados de porteiras e colchetes</p>
             </motion.div>
           </motion.div>
 
