@@ -128,13 +128,7 @@ function App() {
                     <Shield className="w-4 h-4 text-green-600" />
                     <span>Empresa Amiga da Natureza</span>
                   </motion.div>
-                  <motion.div 
-                    className="flex items-center space-x-1 hover:text-blue-600 transition-colors duration-200"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <Award className="w-4 h-4 text-blue-600" />
-                    <span>Certificação ISO</span>
-                  </motion.div>
+
                 </motion.div>
               </div>
               <motion.div 
@@ -299,27 +293,6 @@ function App() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />
-              <motion.div 
-                className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg"
-                initial={{ opacity: 0, y: 20, x: -20 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1.2, duration: 0.5 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <div className="flex items-center space-x-3">
-                  <motion.div
-                    animate={{ rotate: [0, 5, -5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                  >
-                    <Shield className="w-8 h-8 text-green-600" />
-                  </motion.div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Certificação ISO</div>
-                    <div className="text-sm text-gray-600">Qualidade Garantida</div>
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
           </motion.div>
         </div>
