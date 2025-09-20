@@ -12,6 +12,7 @@ import neoenergia from './assets/neoenergia_logo_new_transparent.png'
 import neoenergiaNew from './assets/neoenergia_logo_nova.png'
 import neoenergiaOficial from './assets/neoenergia_logo_oficial.png'
 import neoenergiaTransparente from './assets/neoenergia_logo_transparente.png'
+import neoenergiaFinalTransparente from './assets/neoenergia_logo_final_transparente.png'
 import edpLogo from './assets/edp_logo_improved.png'
 import santaMaria from './assets/santa_maria_logo_new_transparent.png'
 import linharesGeracao from './assets/linhares_geracao_logo_new_transparent.png'
@@ -674,7 +675,7 @@ function App() {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
               >
-                <img src={neoenergiaTransparente} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
+                <img src={neoenergiaFinalTransparente} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
               </motion.div>
               
               <motion.div 
