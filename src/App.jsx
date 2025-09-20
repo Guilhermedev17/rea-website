@@ -137,18 +137,19 @@ function App() {
                 className="flex items-center space-x-4"
                 variants={fadeInUp}
               >
-                <div className="hidden md:block text-right text-sm">
-                  <div className="text-gray-600">Atendimento</div>
-                  <div className="font-semibold text-gray-900">(27) 99999-9999</div>
-                </div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white transition-opacity duration-200 shadow-lg hover:shadow-xl">
+                  <a 
+                    href="https://wa.me/27998746554" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl font-medium"
+                  >
                     <Phone className="w-4 h-4 mr-2" />
-                    Contato
-                  </Button>
+                    WhatsApp
+                  </a>
                 </motion.div>
               </motion.div>
             </motion.div>
