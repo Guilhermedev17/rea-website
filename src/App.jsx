@@ -124,11 +124,11 @@ function App() {
                   variants={fadeInUp}
                 >
                   <motion.div 
-                    className="flex items-center space-x-1 hover:text-green-600 transition-colors duration-200"
+                    className="flex items-center space-x-1 hover:text-blue-600 transition-colors duration-200"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <Shield className="w-4 h-4 text-green-600" />
-                    <span>Empresa Amiga da Natureza</span>
+                    <Zap className="w-4 h-4 text-blue-600" />
+                    <span>Especialistas em Linhas de Transmissão</span>
                   </motion.div>
 
                 </motion.div>
