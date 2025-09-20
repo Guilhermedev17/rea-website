@@ -253,7 +253,7 @@ function App() {
                   className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
                   variants={fadeInUp}
                 >
-                  R&A Serviços e 
+                  R<motion.span className="text-orange-500">&</motion.span>A Serviços e 
                   <motion.span 
                     className="text-orange-500"
                     initial={{ opacity: 0, x: -20 }}
