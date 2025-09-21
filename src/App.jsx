@@ -125,7 +125,7 @@ function MobileMenu({ isOpen, toggleMenu }) {
       
       {/* Menu Panel */}
       <motion.div
-        className="absolute top-0 right-0 w-80 h-full bg-white shadow-2xl"
+        className="absolute top-0 right-0 w-80 h-screen bg-white shadow-2xl overflow-y-auto flex flex-col"
         initial={{ x: '100%' }}
         animate={{ x: isOpen ? 0 : '100%' }}
         transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
@@ -142,7 +142,7 @@ function MobileMenu({ isOpen, toggleMenu }) {
         </div>
         
         {/* Menu Items */}
-        <div className="p-6 space-y-4">
+        <div className="p-6 space-y-4 flex-grow overflow-y-auto">
           {[
             { label: 'Início', id: 'home' },
             { label: 'Serviços', id: 'services' },
