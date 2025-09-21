@@ -978,7 +978,7 @@ function App() {
             <div>
               <h4 className="font-semibold mb-3 text-sm">Empresa</h4>
               <ul className="space-y-1 text-xs text-green-100">
-                <li>15+ Anos de Experiência</li>
+                <li>10+ Anos de Experiência</li>
                 <li>Empresa Amiga da Natureza</li>
                 <li>Linhas de Transmissão</li>
                 <li>Redes de Distribuição MT/BT</li>
@@ -1014,7 +1014,7 @@ function App() {
           </div>
           
           <div className="border-t border-green-600/30 mt-6 pt-4 text-center text-xs text-green-100">
-            <p>&copy; 2024 R&A Serviços e Manutenções Elétricas. Todos os direitos reservados.</p>
+            <p>&copy© 2025 R&A Serviços e Manutenções Elétricas. Todos os direitos reservados.</p>
           </div>
         </div>
       </motion.footer>
