@@ -1129,7 +1129,7 @@ function App() {
               </p>
             </div>
             
-            <div>
+            <div className="footer-services-section">
               <h4 className="font-semibold mb-2 md:mb-3 text-xs md:text-sm">Serviços</h4>
               <ul className="space-y-1 text-xs text-green-100">
                 <li>Supressão em Vegetação Manual</li>
@@ -1139,7 +1139,7 @@ function App() {
               </ul>
             </div>
             
-            <div>
+            <div className="footer-company-section">
               <h4 className="font-semibold mb-2 md:mb-3 text-xs md:text-sm">Empresa</h4>
               <ul className="space-y-1 text-xs text-green-100">
                 <li>10+ Anos de Experiência</li>

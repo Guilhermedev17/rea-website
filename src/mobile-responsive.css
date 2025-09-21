@@ -261,3 +261,14 @@ html {
 }
 
 
+
+
+/* Hide 'Serviços' and 'Empresa' sections in footer on mobile */
+@media (max-width: 768px) {
+  .footer-services-section,
+  .footer-company-section {
+    display: none !important;
+  }
+}
+
+
