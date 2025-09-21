@@ -111,89 +111,99 @@ const scaleIn = {
 // Componente de Menu Mobile
 function MobileMenu({ isOpen, toggleMenu }) {
   return (
-    <motion.div
-      className={`fixed inset-0 z-50 ${isOpen ? 'block' : 'hidden'}`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isOpen ? 1 : 0 }}
-      transition={{ duration: 0.3 }}
-    >
+    <>
       {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-        onClick={toggleMenu}
-      />
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          onClick={toggleMenu}
+        />
+      )}
       
       {/* Menu Panel */}
       <motion.div
-        className="absolute top-0 right-0 w-80 h-screen bg-white shadow-2xl overflow-y-auto flex flex-col"
+        className={`fixed top-0 right-0 z-50 w-80 max-w-[85vw] h-full bg-white shadow-2xl overflow-y-auto flex flex-col md:hidden ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
         initial={{ x: '100%' }}
         animate={{ x: isOpen ? 0 : '100%' }}
         transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
       >
         {/* Header do Menu */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <img src={reaLogoTransparente} alt="R&A Logo" className="h-10 w-auto" />
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
+          <img src={reaLogoTransparente} alt="R&A Logo" className="h-8 sm:h-10 w-auto" />
           <button
             onClick={toggleMenu}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-full hover:bg-gray-100 transition-colors touch-manipulation"
+            aria-label="Fechar menu"
           >
-            <X className="w-6 h-6 text-gray-600" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
           </button>
         </div>
         
         {/* Menu Items */}
-        <div className="p-6 space-y-4 flex-grow overflow-y-auto">
-          {[
-            { label: 'Início', id: 'home' },
-            { label: 'Serviços', id: 'services' },
-            { label: 'Clientes', id: 'clients' },
-            { label: 'Sobre', id: 'about' },
-            { label: 'Contato', id: 'contact' }
-          ].map((item, index) => (
-            <motion.button
-              key={item.id}
-              onClick={() => {
-                scrollToSection(item.id)
-                toggleMenu()
-              }}
-              className="block w-full text-left py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 font-medium"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 * index, duration: 0.3 }}
+        <div className="flex-1 overflow-y-auto">
+          <nav className="p-4 sm:p-6 space-y-2" role="navigation">
+            {[
+              { label: 'Início', id: 'home' },
+              { label: 'Serviços', id: 'services' },
+              { label: 'Clientes', id: 'clients' },
+              { label: 'Sobre', id: 'about' },
+              { label: 'Contato', id: 'contact' }
+            ].map((item, index) => (
+              <motion.button
+                key={item.id}
+                onClick={() => {
+                  scrollToSection(item.id)
+                  toggleMenu()
+                }}
+                className="block w-full text-left py-4 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 font-medium text-lg border border-transparent hover:border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 touch-manipulation"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 20 }}
+                transition={{ delay: isOpen ? 0.1 * index : 0, duration: 0.3 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {item.label}
+              </motion.button>
+            ))}
+          </nav>
+          
+          <div className="p-4 sm:p-6 border-t border-gray-200 bg-gray-50">
+            {/* WhatsApp Button */}
+            <motion.a
+              href="https://wa.me/27998746554"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full mb-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-4 px-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 touch-manipulation"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
+              transition={{ delay: isOpen ? 0.6 : 0, duration: 0.3 }}
+              whileTap={{ scale: 0.98 }}
             >
-              {item.label}
-            </motion.button>
-          ))}
-          
-          {/* WhatsApp Button */}
-          <motion.a
-            href="https://wa.me/27998746554"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full mt-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.3 }}
-          >
-            <MessageCircle className="w-4 h-4 inline mr-2" />
-            WhatsApp
-          </motion.a>
-          
-          {/* Webmail Link */}
-          <motion.a
-            href="https://webmail.rea.srv.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-center py-2 px-4 text-gray-600 hover:text-blue-600 transition-colors duration-200"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.3 }}
-          >
-            Webmail
-          </motion.a>
+              <MessageCircle className="w-4 h-4 inline mr-2" />
+              WhatsApp
+            </motion.a>
+            
+            {/* Webmail Link */}
+            <motion.a
+              href="https://webmail.rea.srv.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 touch-manipulation"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isOpen ? 1 : 0 }}
+              transition={{ delay: isOpen ? 0.7 : 0, duration: 0.3 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Webmail
+            </motion.a>
+          </div>
         </div>
       </motion.div>
-    </motion.div>
+    </>
+  )
   )
 }
 

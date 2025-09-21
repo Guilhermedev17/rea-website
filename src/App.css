@@ -121,7 +121,7 @@
 }
 
 
-/* Animação suave para carrossel de logos - corrigida */
+/* Animação suave para carrossel de logos - otimizada */
 @keyframes scroll-logos {
   0% {
     transform: translateX(0%);
@@ -136,12 +136,26 @@
   display: flex;
   width: fit-content;
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* Pausa a animação no hover para melhor UX - apenas em desktop */
 @media (min-width: 769px) {
   .logos-container:hover .animate-scroll-logos {
     animation-play-state: paused;
+  }
+}
+
+/* Força a animação sempre ativa no mobile */
+@media (max-width: 768px) {
+  .animate-scroll-logos {
+    animation-duration: 20s !important;
+    animation-play-state: running !important;
+  }
+  
+  .logos-container:hover .animate-scroll-logos {
+    animation-play-state: running !important;
   }
 }
 

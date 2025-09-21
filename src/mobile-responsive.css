@@ -173,20 +173,25 @@ html {
 }
 
 /* Improve logo carousel on mobile - always running */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .logos-container .animate-scroll-logos {
-    animation-play-state: running;
-    animation-duration: 25s; /* Slower on mobile for better readability */
+    animation-play-state: running !important;
+    animation-duration: 20s !important; /* Slower on mobile for better readability */
+    animation-iteration-count: infinite !important;
+    animation-timing-function: linear !important;
   }
   
-  /* Remove touch interaction to prevent accidental pause */
+  /* Remove hover interaction to prevent accidental pause on mobile */
+  .logos-container:hover .animate-scroll-logos {
+    animation-play-state: running !important;
+  }
+  
+  /* Ensure smooth performance on mobile */
   .logos-container {
-    pointer-events: none;
-  }
-  
-  /* Re-enable pointer events on logo items for accessibility */
-  .logos-container > * {
-    pointer-events: auto;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
   }
 }
 
