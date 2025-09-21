@@ -1014,7 +1014,7 @@ function App() {
           </div>
           
           <div className="border-t border-green-600/30 mt-6 pt-4 text-center text-xs text-green-100">
-            <p>&copy© 2025 R&A Serviços e Manutenções Elétricas. Todos os direitos reservados.</p>
+            <p>© 2025 R&A Serviços e Manutenções Elétricas. Todos os direitos reservados.</p>
           </div>
         </div>
       </motion.footer>
