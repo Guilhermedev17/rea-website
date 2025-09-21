@@ -296,3 +296,14 @@ html {
 
 
 
+
+
+/* Hide descriptive text and logo in footer on mobile */
+@media (max-width: 768px) {
+  .footer-description,
+  .footer-logo {
+    display: none !important;
+  }
+}
+
+

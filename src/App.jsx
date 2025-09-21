@@ -1123,8 +1123,8 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             <div className="space-y-2 md:space-y-3 col-span-1 sm:col-span-2 md:col-span-1">
-              <img src={reaLogoTransparente} alt="R&A Logo" className="h-8 md:h-12 w-auto" />
-              <p className="text-green-100 text-xs leading-relaxed">
+              <img src={reaLogoTransparente} alt="R&A Logo" className="h-8 md:h-12 w-auto footer-logo" />
+              <p className="text-green-100 text-xs leading-relaxed footer-description">
                 Especializada em serviços elétricos com foco na segurança, qualidade e preservação ambiental.
               </p>
             </div>
@@ -1151,25 +1151,25 @@ function App() {
             
             <div className="footer-contact-section">
               <h4 className="font-semibold mb-2 md:mb-3 text-xs md:text-sm">Contato</h4>
-              <div className="grid grid-cols-2 gap-y-1 text-xs text-green-100">
-                <div className="flex items-center">
+              <div className="flex flex-wrap justify-between gap-y-1 text-xs text-green-100">
+                <div className="flex items-center w-1/2 pr-2">
                   <Phone className="w-3 h-3 mr-2 flex-shrink-0" />
                   (27) 99874-6554
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center w-1/2 pl-2">
                   <Phone className="w-3 h-3 mr-2 flex-shrink-0" />
                   (27) 99984-0445
                 </div>
-                <div className="flex items-center col-span-2">
+                <div className="flex items-center w-full">
                   <Mail className="w-3 h-3 mr-2 flex-shrink-0" />
                   rea@rea.srv.br
                 </div>
 
-                <div className="flex items-start col-span-2">
+                <div className="flex items-start w-full">
                   <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="leading-tight">Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</span>
                 </div>
-                <div className="flex items-start col-span-2">
+                <div className="flex items-start w-full">
                   <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="leading-tight">Av. Cerejeira, 9 andar, Sala 916<br />Torre I, Movelar<br />Linhares-ES, CEP 29906-014</span>
                 </div>
