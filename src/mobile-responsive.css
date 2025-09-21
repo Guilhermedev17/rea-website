@@ -272,3 +272,25 @@ html {
 }
 
 
+
+
+/* Optimize 'Contato' section layout in footer on mobile */
+@media (max-width: 768px) {
+  .footer-contact-section .grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for phone and email */
+    gap: 0.5rem; /* Smaller gap */
+  }
+  .footer-contact-section .grid > div {
+    display: flex;
+    align-items: center;
+  }
+  .footer-contact-section .grid > div.col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .footer-contact-section .grid > div.flex.items-start {
+    align-items: flex-start;
+  }
+}
+
+
+

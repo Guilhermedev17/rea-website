@@ -1149,9 +1149,9 @@ function App() {
               </ul>
             </div>
             
-            <div>
+            <div className="footer-contact-section">
               <h4 className="font-semibold mb-2 md:mb-3 text-xs md:text-sm">Contato</h4>
-              <div className="space-y-1 text-xs text-green-100">
+              <div className="grid grid-cols-2 gap-y-1 text-xs text-green-100">
                 <div className="flex items-center">
                   <Phone className="w-3 h-3 mr-2 flex-shrink-0" />
                   (27) 99874-6554
@@ -1160,16 +1160,16 @@ function App() {
                   <Phone className="w-3 h-3 mr-2 flex-shrink-0" />
                   (27) 99984-0445
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center col-span-2">
                   <Mail className="w-3 h-3 mr-2 flex-shrink-0" />
                   rea@rea.srv.br
                 </div>
 
-                <div className="flex items-start">
+                <div className="flex items-start col-span-2">
                   <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="leading-tight">Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</span>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start col-span-2">
                   <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="leading-tight">Av. Cerejeira, 9 andar, Sala 916<br />Torre I, Movelar<br />Linhares-ES, CEP 29906-014</span>
                 </div>
