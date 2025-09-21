@@ -277,15 +277,17 @@ html {
 /* Optimize 'Contato' section layout in footer on mobile */
 @media (max-width: 768px) {
   .footer-contact-section .grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for phone and email */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Items side-by-side */
     gap: 0.5rem; /* Smaller gap */
   }
   .footer-contact-section .grid > div {
     display: flex;
     align-items: center;
+    white-space: nowrap; /* Prevent wrapping for single items */
   }
   .footer-contact-section .grid > div.col-span-2 {
-    grid-column: span 2 / span 2;
+    grid-column: span 2 / span 2; /* Allow email and addresses to span two columns if needed */
+    white-space: normal; /* Allow addresses to wrap */
   }
   .footer-contact-section .grid > div.flex.items-start {
     align-items: flex-start;
