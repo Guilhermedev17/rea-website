@@ -688,7 +688,7 @@ function App() {
           </motion.div>
           
           <motion.div 
-            className="relative overflow-hidden py-8"
+            className="relative overflow-hidden py-8 logos-container"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -698,173 +698,39 @@ function App() {
             <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent z-10 pointer-events-none"></div>
             
-            <motion.div 
-              className="flex space-x-8 items-center animate-scroll-smooth"
-              style={{ willChange: 'transform' }}
-            >
-              {/* Primeira série de logos */}
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-
-              
-              {/* Segunda série para continuidade */}
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={neoenergiaNovaVersao} alt="Neoenergia" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              {/* Segunda série para transição imperceptível */}
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={edpLogo} alt="EDP" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={santaMaria} alt="Santa Maria" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={linharesGeracao} alt="Linhares Geração" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-              <motion.div 
-                className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 group"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -8,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-              >
-                <img src={tropicaliaLogo} alt="Tropicalia Transmissora" className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 " />
-              </motion.div>
-              
-
-            </motion.div>
+            <div className="animate-scroll-logos">
+              {/* Array de logos otimizado - duplicado para scroll contínuo */}
+              {[
+                { src: edpLogo, alt: "EDP" },
+                { src: neoenergiaNovaVersao, alt: "Neoenergia" },
+                { src: santaMaria, alt: "Santa Maria" },
+                { src: linharesGeracao, alt: "Linhares Geração" },
+                { src: tropicaliaLogo, alt: "Tropicalia Transmissora" }
+              ].concat([
+                { src: edpLogo, alt: "EDP" },
+                { src: neoenergiaNovaVersao, alt: "Neoenergia" },
+                { src: santaMaria, alt: "Santa Maria" },
+                { src: linharesGeracao, alt: "Linhares Geração" },
+                { src: tropicaliaLogo, alt: "Tropicalia Transmissora" }
+              ]).map((logo, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex justify-center items-center p-8 bg-white rounded-2xl shadow-sm min-w-[240px] h-32 mx-4 group flex-shrink-0"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -8,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                  }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.alt} 
+                    className="max-h-20 max-w-[200px] w-auto h-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200" 
+                  />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </motion.section>

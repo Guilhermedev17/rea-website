@@ -121,20 +121,26 @@
 }
 
 
-/* Animação suave para carrossel sem pulos - otimizada */
-@keyframes scroll-smooth {
+/* Animação suave para carrossel de logos - corrigida */
+@keyframes scroll-logos {
   0% {
-    transform: translateX(-33.33%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 
-.animate-scroll-smooth {
-  animation: scroll-smooth 45s linear infinite;
-  width: 300%;
+.animate-scroll-logos {
+  animation: scroll-logos 20s linear infinite;
+  display: flex;
+  width: fit-content;
   will-change: transform;
+}
+
+/* Pausa a animação no hover para melhor UX */
+.logos-container:hover .animate-scroll-logos {
+  animation-play-state: paused;
 }
 
 
