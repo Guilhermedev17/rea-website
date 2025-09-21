@@ -240,12 +240,7 @@ function EmpresaCarousel() {
         ))}
       </div>
 
-      {/* Indicador de pause */}
-      {isPaused && (
-        <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-          <span className="text-white text-sm font-medium">⏸️ Pausado</span>
-        </div>
-      )}
+
     </div>
   )
 }
@@ -377,34 +372,12 @@ function App() {
                 Contato
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
               </motion.a>
-              <motion.a 
-                href="https://webmail.rea.srv.br/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
-                variants={fadeInUp}
-                whileHover={{ y: -2 }}
-              >
-                Webmail
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
-              </motion.a>
               <motion.div 
                 className="ml-auto hidden md:block"
                 variants={fadeInUp}
               >
                 <span className="text-green-200 text-sm">Sooretama/ES</span>
               </motion.div>
-              <motion.a 
-                href="https://webmail.rea.srv.br/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
-                variants={fadeInUp}
-                whileHover={{ y: -2 }}
-              >
-                Webmail
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
-              </motion.a>
             </motion.nav>
           </div>
         </motion.div>
@@ -628,7 +601,7 @@ function App() {
               >
                 <Zap className="w-8 h-8 text-white" />
               </motion.div>
-              <h4 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">Recuperação de Acesso Vegetação</h4>
+          <h4 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Recuperação de Acesso em Vegetação</h4>
               <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acesso vegetação, aterramento e seccionamento de cercas</p>
             </motion.div>
 
@@ -1031,6 +1004,7 @@ function App() {
               </motion.div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">Telefone</h3>
               <p className="text-gray-600">(27) 99874-6554</p>
+              <p className="text-gray-600">(27) 99984-0445</p>
             </motion.div>
             
             <motion.div 
@@ -1072,6 +1046,26 @@ function App() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">Endereço</h3>
               <p className="text-gray-600 text-sm">Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</p>
             </motion.div>
+
+            <motion.div 
+              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group"
+              variants={scaleIn}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mx-auto mb-4"
+                whileHover={{ rotate: 5, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <MapPin className="w-6 h-6 text-white" />
+              </motion.div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">Endereço de Apoio</h3>
+              <p className="text-gray-600 text-sm">Av. Cerejeira, 9 andar, Sala 916<br />Torre I, Movelar<br />Linhares-ES, CEP 29906-014</p>
+            </motion.div>
           </motion.div>
           
 
@@ -1100,7 +1094,7 @@ function App() {
               <ul className="space-y-1 text-xs text-green-100">
                 <li>Supressão em Vegetação Manual</li>
                 <li>Poda e Corte de Árvores</li>
-                <li>Recuperação de Acesso Vegetação</li>
+                <li>Recuperação de Acesso em Vegetação</li>
                 <li>Consertos de Porteiras</li>
               </ul>
             </div>
@@ -1123,16 +1117,21 @@ function App() {
                   (27) 99874-6554
                 </div>
                 <div className="flex items-center">
-                  <Mail className="w-3 h-3 mr-2" />
-                  rea@rea.srv.br
+                  <Phone className="w-3 h-3 mr-2" />
+                  (27) 99984-0445
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-3 h-3 mr-2" />
-                  roberto@rea.srv.br
+                  rea@rea.srv.br
                 </div>
+
                 <div className="flex items-start">
                   <MapPin className="w-3 h-3 mr-2 mt-0.5" />
                   <span>Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</span>
+                </div>
+                <div className="flex items-start">
+                  <MapPin className="w-3 h-3 mr-2 mt-0.5" />
+                  <span>Av. Cerejeira, 9 andar, Sala 916<br />Torre I, Movelar<br />Linhares-ES, CEP 29906-014</span>
                 </div>
               </div>
             </div>
