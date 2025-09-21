@@ -303,7 +303,7 @@ function App() {
                   href="https://wa.me/27998746554" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl font-medium hover:scale-105 active:scale-95"
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 font-semibold"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   WhatsApp
