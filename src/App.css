@@ -138,9 +138,11 @@
   will-change: transform;
 }
 
-/* Pausa a animação no hover para melhor UX */
-.logos-container:hover .animate-scroll-logos {
-  animation-play-state: paused;
+/* Pausa a animação no hover para melhor UX - apenas em desktop */
+@media (min-width: 769px) {
+  .logos-container:hover .animate-scroll-logos {
+    animation-play-state: paused;
+  }
 }
 
 

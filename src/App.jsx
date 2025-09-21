@@ -277,8 +277,8 @@ function EmpresaCarousel() {
   return (
     <div 
       className="relative rounded-2xl shadow-2xl overflow-hidden bg-gray-200"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={() => !isMobile && setIsPaused(true)}
+      onMouseLeave={() => !isMobile && setIsPaused(false)}
     >
       {/* Loading Skeleton */}
       {isLoading && (

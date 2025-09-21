@@ -172,14 +172,21 @@ html {
   box-sizing: border-box;
 }
 
-/* Improve logo carousel on mobile */
+/* Improve logo carousel on mobile - always running */
 @media (max-width: 640px) {
   .logos-container .animate-scroll-logos {
-    animation-play-state: paused;
+    animation-play-state: running;
+    animation-duration: 25s; /* Slower on mobile for better readability */
   }
   
-  .logos-container:hover .animate-scroll-logos {
-    animation-play-state: running;
+  /* Remove touch interaction to prevent accidental pause */
+  .logos-container {
+    pointer-events: none;
+  }
+  
+  /* Re-enable pointer events on logo items for accessibility */
+  .logos-container > * {
+    pointer-events: auto;
   }
 }
 
@@ -303,6 +310,61 @@ html {
   .footer-description,
   .footer-logo {
     display: none !important;
+  }
+}
+
+/* Additional mobile layout fixes */
+@media (max-width: 768px) {
+  /* Ensure proper spacing in hero section */
+  #home .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix potential overflow issues */
+  .grid {
+    overflow-x: visible;
+  }
+  
+  /* Improve mobile menu button positioning */
+  .mobile-menu-button {
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text sizing for mobile */
+  .text-3xl {
+    font-size: 1.75rem !important; /* Slightly smaller for mobile */
+  }
+  
+  .text-4xl {
+    font-size: 2rem !important;
+  }
+  
+  .text-5xl {
+    font-size: 2.25rem !important;
+  }
+  
+  /* Improve spacing in cards */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem !important;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 2rem !important;
+  }
+  
+  /* Fix button sizing on mobile */
+  .inline-flex {
+    min-height: 40px;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Better carousel controls on mobile */
+  .empresa-carousel-indicators button {
+    width: 8px !important;
+    height: 8px !important;
   }
 }
 
