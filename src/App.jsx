@@ -613,7 +613,7 @@ function App() {
                 <Zap className="w-8 h-8 text-white" />
               </motion.div>
           <h4 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Recuperação de Acesso em Vegetação</h4>
-              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acesso vegetação, aterramento e seccionamento de cercas</p>
+              <p className="text-gray-600 text-sm group-hover:text-gray-700 transition-colors">Recuperação de acesso em vegetação, aterramento e seccionamento de cercas</p>
             </motion.div>
 
             <motion.div 
