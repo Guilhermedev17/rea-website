@@ -383,6 +383,17 @@ function App() {
               >
                 <span className="text-green-200 text-sm">Sooretama/ES</span>
               </motion.div>
+              <motion.a 
+                href="https://webmail.rea.srv.br/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+              >
+                Webmail
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
+              </motion.a>
             </motion.nav>
           </div>
         </motion.div>
