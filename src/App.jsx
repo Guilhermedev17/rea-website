@@ -372,6 +372,17 @@ function App() {
                 Contato
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
               </motion.a>
+              <motion.a 
+                href="https://webmail.rea.srv.br/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
+                variants={fadeInUp}
+                whileHover={{ y: -2 }}
+              >
+                Webmail
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
+              </motion.a>
               <motion.div 
                 className="ml-auto hidden md:block"
                 variants={fadeInUp}
