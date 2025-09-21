@@ -7,6 +7,22 @@ import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, 
 import './App.css'
 import './scroll-fix.css'
 
+// Função para scroll suave otimizada
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    // Calcula a altura do header dinamicamente
+    const header = document.querySelector('header')
+    const headerHeight = header ? header.offsetHeight + 20 : 140
+    const elementPosition = element.offsetTop - headerHeight
+    
+    window.scrollTo({
+      top: Math.max(0, elementPosition),
+      behavior: 'smooth'
+    })
+  }
+}
+
 // Import das imagens
 import reaLogo from './assets/rea_logo_transparent_final.png'
 import reaLogoNova from './assets/rea_logo_nova_oficial.jpg'
@@ -326,51 +342,51 @@ function App() {
               initial="initial"
               animate="animate"
             >
-              <motion.a 
-                href="#home" 
-                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
+              <motion.button 
+                onClick={() => scrollToSection('home')}
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group cursor-pointer"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Início
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
-              </motion.a>
-              <motion.a 
-                href="#services" 
-                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.button>
+              <motion.button 
+                onClick={() => scrollToSection('services')}
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group cursor-pointer"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Serviços
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
-              </motion.a>
-              <motion.a 
-                href="#clients" 
-                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.button>
+              <motion.button 
+                onClick={() => scrollToSection('clients')}
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group cursor-pointer"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Clientes
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
-              </motion.a>
-              <motion.a 
-                href="#about" 
-                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.button>
+              <motion.button 
+                onClick={() => scrollToSection('about')}
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group cursor-pointer"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Sobre
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
-              </motion.a>
-              <motion.a 
-                href="#contact" 
-                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group"
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.button>
+              <motion.button 
+                onClick={() => scrollToSection('contact')}
+                className="hover:text-green-200 font-medium transition-opacity duration-200 relative group cursor-pointer"
                 variants={fadeInUp}
                 whileHover={{ y: -2 }}
               >
                 Contato
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-opacity duration-200 group-hover:w-full"></span>
-              </motion.a>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-200 transition-all duration-200 group-hover:w-full"></span>
+              </motion.button>
               <motion.a 
                 href="https://webmail.rea.srv.br/" 
                 target="_blank" 
