@@ -240,12 +240,7 @@ function EmpresaCarousel() {
         ))}
       </div>
 
-      {/* Indicador de pause */}
-      {isPaused && (
-        <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-          <span className="text-white text-sm font-medium">⏸️ Pausado</span>
-        </div>
-      )}
+
     </div>
   )
 }
@@ -272,7 +267,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
         >
-          <div className="container mx-auto px-4 py-3">
+          <div className="container mx-auto px-4 py-1">
             <motion.div 
               className="flex items-center justify-between"
               variants={staggerContainer}
@@ -280,10 +275,10 @@ function App() {
               animate="animate"
             >
               <div className="flex items-center space-x-6">
-                <motion.img 
+<motion.img 
                   src={reaLogoTransparente} 
                   alt="R&A Logo" 
-                  className="h-20 w-auto transition-transform duration-300 hover:scale-105" 
+                  className="h-12 w-auto transition-transform duration-300 hover:scale-105" 
                   variants={scaleIn}
                 />
                 <motion.div 
@@ -310,7 +305,7 @@ function App() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl font-medium hover:scale-105 active:scale-95"
                 >
-                  <Phone className="w-4 h-4 mr-2" />
+                  <MessageCircle className="w-4 h-4 mr-1" />
                   WhatsApp
                 </a>
               </motion.div>
