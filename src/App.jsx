@@ -344,7 +344,7 @@ function EmpresaCarousel() {
       </button>
       
       {/* Indicadores - mais visíveis no mobile */}
-      <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1.5 md:space-x-2">
+      <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1.5 md:space-x-2 empresa-carousel-indicators">
         {images.map((_, index) => (
           <button
             key={index}
@@ -674,8 +674,8 @@ function App() {
                 viewport={{ once: true, amount: 0.3 }}
               >
                 <div className="text-center text-white">
-                  <motion.div 
-                    className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6"
+                    <motion.div 
+                      className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6 services-specialized-icon-container"
                     variants={scaleIn}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >

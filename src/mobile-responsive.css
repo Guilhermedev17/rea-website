@@ -182,3 +182,82 @@ html {
     animation-play-state: running;
   }
 }
+
+/* Footer adjustments for mobile */
+@media (max-width: 768px) {
+  footer .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  footer .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  footer .space-y-2,
+  footer .space-y-1 {
+    space-y: 0.5rem;
+  }
+  footer h4 {
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 0.5rem;
+  }
+  footer ul li,
+  footer p,
+  footer div.flex.items-center,
+  footer div.flex.items-start span {
+    font-size: 0.75rem; /* text-xs */
+    line-height: 1.4;
+  }
+  footer img {
+    height: 2rem; /* h-8 */
+  }
+  footer .border-t {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  footer .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  footer h4 {
+    font-size: 0.8125rem; /* ~13px */
+  }
+  footer ul li,
+  footer p,
+  footer div.flex.items-center,
+  footer div.flex.items-start span {
+    font-size: 0.6875rem; /* ~11px */
+  }
+}
+
+
+
+
+/* Hide carousel indicators on mobile */
+@media (max-width: 768px) {
+  .empresa-carousel-indicators {
+    display: none !important;
+  }
+}
+
+
+
+
+/* Fix for cropped icon in 'Serviços Especializados' section on mobile */
+@media (max-width: 768px) {
+  .services-specialized-icon-container {
+    width: 6rem; /* Adjust size for mobile */
+    height: 6rem; /* Adjust size for mobile */
+    margin-bottom: 1rem; /* Adjust margin */
+  }
+  .services-specialized-icon-container svg {
+    width: 3rem; /* Adjust icon size */
+    height: 3rem; /* Adjust icon size */
+  }
+}
+
+
