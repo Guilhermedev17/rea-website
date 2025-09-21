@@ -176,10 +176,9 @@ function EmpresaCarousel() {
           className="flex w-full h-full"
           animate={{ x: `-${currentImage * 100}%` }}
           transition={{ 
-            type: "spring", 
-            stiffness: 300, 
-            damping: 30,
-            duration: 0.6 
+            type: "tween", 
+            duration: 0.8, 
+            ease: "easeInOut" 
           }}
         >
           {images.map((image, index) => (
