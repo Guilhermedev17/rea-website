@@ -1070,7 +1070,7 @@ function App() {
             <motion.div 
               className="bg-white rounded-lg md:rounded-xl p-4 md:p-6 shadow-lg border border-gray-100 text-center group"
               variants={scaleIn}
-              whileHover={{ 
+              whileHover={{
                 y: -3,
                 boxShadow: "0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 8px -5px rgba(0, 0, 0, 0.04)"
               }}
@@ -1165,11 +1165,11 @@ function App() {
                   rea@rea.srv.br
                 </div>
 
-                <div className="flex items-start w-full">
+                <div className="flex items-start w-full hidden md:flex">
                   <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="leading-tight">Alameda Buganville, 37<br />Centro, Sooretama/ES<br />CEP: 29927-000</span>
                 </div>
-                <div className="flex items-start w-full">
+                <div className="flex items-start w-full hidden md:flex">
                   <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="leading-tight">Av. Cerejeira, 9 andar, Sala 916<br />Torre I, Movelar<br />Linhares-ES, CEP 29906-014</span>
                 </div>
