@@ -6,7 +6,7 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',  // Base URL padrão para deploy universal
-  plugins: [react(),tailwindcss()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
