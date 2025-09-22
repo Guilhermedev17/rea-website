@@ -1,0 +1,6 @@
+{
+  "title": "Fix: Configurar deploy correto para GitHub Pages",
+  "body": "## Correção do Problema de Tela Branca no GitHub Pages\n\n### Problema Identificado\nO site estava com tela branca porque os caminhos estavam apontando para a raiz ao invés do subdiretório do projeto.\n\n### Soluções Implementadas\n1. Adicionado base URL no vite.config.js\n2. Configurado gh-pages para deploy\n3. Criado arquivo 404.html para SPA\n4. Adicionado .nojekyll\n\n### Deploy Realizado\nSite funcionando em: https://guilhermedev17.github.io/rea-website",
+  "head": "main",
+  "base": "branch-82"
+}
