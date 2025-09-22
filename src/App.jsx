@@ -170,8 +170,8 @@ function MobileMenu({ isOpen, toggleMenu }) {
                 <motion.button
                   key={item.id}
                   onClick={() => {
-                    scrollToSection(item.id)
                     toggleMenu()
+                    setTimeout(() => scrollToSection(item.id), 300) // Pequeno delay para fechar o menu antes de rolar
                   }}
                   className="flex items-center w-full text-left p-4 text-white hover:bg-white/20 rounded-xl transition-all duration-200 font-medium border border-white/10 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation backdrop-blur-sm"
                   initial={{ opacity: 0, x: 20 }}
