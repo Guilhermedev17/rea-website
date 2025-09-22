@@ -1190,7 +1190,7 @@ function App() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="bg-gradient-to-r from-green-700 to-blue-700 text-white py-6 md:py-8 pb-20 md:pb-8"
+        className="bg-gradient-to-r from-green-700 to-blue-700 text-white py-4 md:py-8 pb-4 md:pb-8"
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -1223,16 +1223,16 @@ function App() {
             
             <div className="footer-contact-section">
               <h4 className="font-semibold mb-2 md:mb-3 text-xs md:text-sm">Contato</h4>
-              <div className="flex flex-wrap justify-between gap-y-1 text-xs text-green-100">
-                <div className="flex items-center w-1/2 pr-2">
+              <div className="flex flex-col gap-y-1 text-xs text-green-100">
+                <div className="flex items-center">
                   <Phone className="w-3 h-3 mr-2 flex-shrink-0" />
                   (27) 99874-6554
                 </div>
-                <div className="flex items-center w-1/2 pl-2">
+                <div className="flex items-center">
                   <Phone className="w-3 h-3 mr-2 flex-shrink-0" />
                   (27) 99984-0445
                 </div>
-                <div className="flex items-center w-full">
+                <div className="flex items-center">
                   <Mail className="w-3 h-3 mr-2 flex-shrink-0" />
                   rea@rea.srv.br
                 </div>
