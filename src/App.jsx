@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, TreePine, Wrench, HardHat, Leaf, Building, MessageCircle, Menu, X } from 'lucide-react'
+import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, TreePine, Wrench, HardHat, Leaf, Building, MessageCircle, Menu, X, Home, Briefcase, Star, Info, Contact } from 'lucide-react'
 import './App.css'
 import './scroll-fix.css'
 import './mobile-responsive.css'
@@ -108,7 +108,51 @@ const scaleIn = {
   }
 }
 
-// Componente de Menu Mobile
+// Componente Bottom Navigation para Mobile
+function BottomNavigation({ activeSection }) {
+  const navItems = [
+    { label: 'Início', id: 'home', icon: Home },
+    { label: 'Serviços', id: 'services', icon: Briefcase },
+    { label: 'Clientes', id: 'clients', icon: Star },
+    { label: 'Sobre', id: 'about', icon: Info },
+    { label: 'Contato', id: 'contact', icon: Contact }
+  ]
+
+  return (
+    <motion.div
+      className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-gray-200 md:hidden"
+      initial={{ y: 100 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+    >
+      <div className="flex justify-around items-center py-2 px-2">
+        {navItems.map((item) => {
+          const IconComponent = item.icon
+          const isActive = activeSection === item.id
+          
+          return (
+            <motion.button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`flex flex-col items-center justify-center py-2 px-3 rounded-lg transition-all duration-200 min-w-[60px] touch-manipulation ${
+                isActive 
+                  ? 'bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg' 
+                  : 'text-gray-600 hover:text-green-600 hover:bg-green-50'
+              }`}
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ y: -2 }}
+            >
+              <IconComponent className={`w-5 h-5 mb-1 ${isActive ? 'text-white' : ''}`} />
+              <span className={`text-xs font-medium ${isActive ? 'text-white' : ''}`}>{item.label}</span>
+            </motion.button>
+          )
+        })}
+      </div>
+    </motion.div>
+  )
+}
+
+// Componente de Menu Mobile Melhorado
 function MobileMenu({ isOpen, toggleMenu }) {
   return (
     <>
@@ -126,65 +170,86 @@ function MobileMenu({ isOpen, toggleMenu }) {
       
       {/* Menu Panel */}
       <motion.div
-        className={`fixed top-0 right-0 z-50 w-80 max-w-[85vw] h-screen max-h-screen bg-white shadow-2xl overflow-hidden flex flex-col md:hidden mobile-menu-fixed ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        className={`fixed top-0 right-0 z-50 w-80 max-w-[85vw] h-screen max-h-screen shadow-2xl overflow-hidden flex flex-col md:hidden mobile-menu-fixed ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
         initial={{ x: '100%' }}
         animate={{ x: isOpen ? 0 : '100%' }}
         transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
         style={{ height: '100vh', maxHeight: '100vh' }}
       >
+        {/* Background with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-600 via-blue-600 to-orange-500 opacity-90"></div>
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+        
         {/* Header do Menu */}
-        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
-          <img src={reaLogoTransparente} alt="R&A Logo" className="h-8 sm:h-10 w-auto" />
+        <div className="relative flex items-center justify-between p-4 sm:p-6 border-b border-white/20">
+          <div className="flex items-center space-x-3">
+            <img src={reaLogoTransparente} alt="R&A Logo" className="h-8 sm:h-10 w-auto" />
+            <div className="text-white">
+              <h3 className="font-bold text-lg">R&A</h3>
+              <p className="text-xs text-white/80">Serviços Elétricos</p>
+            </div>
+          </div>
           <button
             onClick={toggleMenu}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors touch-manipulation"
+            className="p-2 rounded-full hover:bg-white/20 transition-colors touch-manipulation"
             aria-label="Fechar menu"
           >
-            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </button>
         </div>
         
         {/* Menu Items */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain mobile-menu-content" style={{ WebkitOverflowScrolling: 'touch', overscrollBehavior: 'contain' }}>
-          <nav className="p-4 sm:p-6 space-y-2" role="navigation">
+        <div className="relative flex-1 overflow-y-auto overflow-x-hidden overscroll-contain mobile-menu-content" style={{ WebkitOverflowScrolling: 'touch', overscrollBehavior: 'contain' }}>
+          <nav className="p-4 sm:p-6 space-y-3" role="navigation">
             {[
-              { label: 'Início', id: 'home' },
-              { label: 'Serviços', id: 'services' },
-              { label: 'Clientes', id: 'clients' },
-              { label: 'Sobre', id: 'about' },
-              { label: 'Contato', id: 'contact' }
-            ].map((item, index) => (
-              <motion.button
-                key={item.id}
-                onClick={() => {
-                  scrollToSection(item.id)
-                  toggleMenu()
-                }}
-                className="block w-full text-left py-4 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-all duration-200 font-medium text-lg border border-transparent hover:border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 touch-manipulation"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 20 }}
-                transition={{ delay: isOpen ? 0.1 * index : 0, duration: 0.3 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {item.label}
-              </motion.button>
-            ))}
+              { label: 'Início', id: 'home', icon: Home, description: 'Página inicial' },
+              { label: 'Serviços', id: 'services', icon: Briefcase, description: 'Nossos serviços' },
+              { label: 'Clientes', id: 'clients', icon: Star, description: 'Parceiros de sucesso' },
+              { label: 'Sobre', id: 'about', icon: Info, description: 'Nossa empresa' },
+              { label: 'Contato', id: 'contact', icon: Contact, description: 'Fale conosco' }
+            ].map((item, index) => {
+              const IconComponent = item.icon
+              return (
+                <motion.button
+                  key={item.id}
+                  onClick={() => {
+                    scrollToSection(item.id)
+                    toggleMenu()
+                  }}
+                  className="flex items-center w-full text-left p-4 text-white hover:bg-white/20 rounded-xl transition-all duration-200 font-medium border border-white/10 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation backdrop-blur-sm"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 20 }}
+                  transition={{ delay: isOpen ? 0.1 * index : 0, duration: 0.3 }}
+                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-base">{item.label}</div>
+                    <div className="text-sm text-white/70">{item.description}</div>
+                  </div>
+                </motion.button>
+              )
+            })}
           </nav>
           
-          <div className="p-4 sm:p-6 border-t border-gray-200 bg-gray-50 flex-shrink-0">
+          {/* Action Buttons */}
+          <div className="relative p-4 sm:p-6 border-t border-white/20 space-y-3 flex-shrink-0">
             {/* WhatsApp Button */}
             <motion.a
               href="https://wa.me/27998746554"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full mb-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center py-4 px-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 touch-manipulation"
+              className="flex items-center w-full bg-green-500 hover:bg-green-600 text-white text-center py-4 px-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
               transition={{ delay: isOpen ? 0.6 : 0, duration: 0.3 }}
               whileTap={{ scale: 0.98 }}
             >
-              <MessageCircle className="w-4 h-4 inline mr-2" />
-              WhatsApp
+              <MessageCircle className="w-5 h-5 mr-3" />
+              <span>Falar no WhatsApp</span>
             </motion.a>
             
             {/* Webmail Link */}
@@ -192,13 +257,14 @@ function MobileMenu({ isOpen, toggleMenu }) {
               href="https://webmail.rea.srv.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 touch-manipulation"
+              className="flex items-center w-full bg-white/20 hover:bg-white/30 text-white text-center py-3 px-4 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation backdrop-blur-sm border border-white/20"
               initial={{ opacity: 0 }}
               animate={{ opacity: isOpen ? 1 : 0 }}
               transition={{ delay: isOpen ? 0.7 : 0, duration: 0.3 }}
               whileTap={{ scale: 0.98 }}
             >
-              Webmail
+              <Mail className="w-4 h-4 mr-3" />
+              <span>Acessar Webmail</span>
             </motion.a>
           </div>
         </div>
@@ -375,6 +441,7 @@ function EmpresaCarousel() {
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [activeSection, setActiveSection] = React.useState('home')
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -392,6 +459,30 @@ function App() {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [isMobileMenuOpen])
   
+  // Sistema de detecção de seção ativa baseado no scroll
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'services', 'clients', 'about', 'contact']
+      const scrollPosition = window.scrollY + 200 // Offset para melhor detecção
+      
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const { offsetTop, offsetHeight } = element
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section)
+            break
+          }
+        }
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Chamada inicial
+    
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   // Previne scroll quando o menu está aberto
   React.useEffect(() => {
     if (isMobileMenuOpen) {
@@ -578,6 +669,9 @@ function App() {
       
       {/* Mobile Menu */}
       <MobileMenu isOpen={isMobileMenuOpen} toggleMenu={toggleMobileMenu} />
+      
+      {/* Bottom Navigation - Mobile Only */}
+      <BottomNavigation activeSection={activeSection} />
 
       {/* Hero Section */}
       <motion.section
@@ -1140,7 +1234,7 @@ function App() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="bg-gradient-to-r from-green-700 to-blue-700 text-white py-6 md:py-8"
+        className="bg-gradient-to-r from-green-700 to-blue-700 text-white py-6 md:py-8 pb-20 md:pb-8"
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
