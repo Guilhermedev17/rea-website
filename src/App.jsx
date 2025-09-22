@@ -1190,7 +1190,7 @@ function App() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="bg-gradient-to-r from-green-700 to-blue-700 text-white py-6 md:py-8 pb-20 md:pb-8"
+        className="bg-gradient-to-r from-green-700 to-blue-700 text-white py-6 md:py-8 pb-8 md:pb-8"
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
