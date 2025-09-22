@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Mail, Phone, MapPin, Shield, Zap, Users, Award, CheckCircle, Scissors, TreePine, Wrench, HardHat, Leaf, Building, MessageCircle, Menu, X, Home, Briefcase, Star, Info, Contact } from 'lucide-react'
+import MobileMenuEneva from './components/ui/mobile-menu-eneva.jsx'
 import './App.css'
 import './scroll-fix.css'
 import './mobile-responsive.css'
@@ -110,123 +111,23 @@ const scaleIn = {
 
 
 
-// Componente de Menu Mobile Melhorado
+// Componente de Menu Mobile no estilo da Eneva
 function MobileMenu({ isOpen, toggleMenu }) {
+  const menuItems = [
+    { id: 'home', label: 'Início', onClick: () => scrollToSection('home') },
+    { id: 'services', label: 'Serviços', onClick: () => scrollToSection('services') },
+    { id: 'clients', label: 'Clientes', onClick: () => scrollToSection('clients') },
+    { id: 'about', label: 'Sobre', onClick: () => scrollToSection('about') },
+    { id: 'contact', label: 'Contato', onClick: () => scrollToSection('contact') }
+  ]
+
   return (
-    <>
-      {/* Backdrop */}
-      {isOpen && (
-        <motion.div
-          className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          onClick={toggleMenu}
-        />
-      )}
-      
-      {/* Menu Panel */}
-      <motion.div
-        className={`fixed top-0 right-0 z-50 w-80 max-w-[85vw] h-screen max-h-screen shadow-2xl overflow-hidden flex flex-col md:hidden mobile-menu-fixed ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
-        initial={{ x: '100%' }}
-        animate={{ x: isOpen ? 0 : '100%' }}
-        transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
-        style={{ height: '100vh', maxHeight: '100vh' }}
-      >
-        {/* Background - Solid neutral color */}
-        <div className="absolute inset-0 bg-white"></div>
-        
-        {/* Header do Menu */}
-        <div className="relative flex items-center justify-between p-4 sm:p-6 border-b border-white/20">
-          <div className="flex items-center space-x-3">
-            <img src={reaLogoTransparente} alt="R&A Logo" className="h-8 sm:h-10 w-auto" />
-            <div className="text-gray-800">
-              <h3 className="font-bold text-lg">R&A</h3>
-              <p className="text-xs text-gray-600">Serviços Elétricos</p>
-            </div>
-          </div>
-          <button
-            onClick={toggleMenu}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors touch-manipulation"
-            aria-label="Fechar menu"
-          >
-            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
-          </button>
-        </div>
-        
-        {/* Menu Items */}
-        <div className="relative flex-1 overflow-y-auto overflow-x-hidden overscroll-contain mobile-menu-content" style={{ WebkitOverflowScrolling: 'touch', overscrollBehavior: 'contain' }}>
-          <nav className="p-4 sm:p-6 space-y-3" role="navigation">
-            {[
-              { label: 'Início', id: 'home', icon: Home, description: 'Página inicial' },
-              { label: 'Serviços', id: 'services', icon: Briefcase, description: 'Nossos serviços' },
-              { label: 'Clientes', id: 'clients', icon: Star, description: 'Parceiros de sucesso' },
-              { label: 'Sobre', id: 'about', icon: Info, description: 'Nossa empresa' },
-              { label: 'Contato', id: 'contact', icon: Contact, description: 'Fale conosco' }
-            ].map((item, index) => {
-              const IconComponent = item.icon
-              return (
-                <motion.button
-                  key={item.id}
-                  onClick={() => {
-                    toggleMenu()
-                    setTimeout(() => scrollToSection(item.id), 300) // Pequeno delay para fechar o menu antes de rolar
-                  }}
-                  className="flex items-center w-full text-left p-4 text-gray-800 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium border border-gray-200 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 20 }}
-                  transition={{ delay: isOpen ? 0.1 * index : 0, duration: 0.3 }}
-                  whileTap={{ scale: 0.98 }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <IconComponent className="w-5 h-5 text-gray-600" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-base">{item.label}</div>
-                    <div className="text-sm text-gray-600">{item.description}</div>
-                  </div>
-                </motion.button>
-              )
-            })}
-          </nav>
-          
-          {/* Action Buttons */}
-          <div className="relative p-4 sm:p-6 border-t border-white/20 space-y-3 flex-shrink-0">
-            {/* WhatsApp Button */}
-            <motion.a
-              href="https://wa.me/27998746554"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center w-full bg-green-500 hover:bg-green-600 text-white text-center py-4 px-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
-              transition={{ delay: isOpen ? 0.6 : 0, duration: 0.3 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <MessageCircle className="w-5 h-5 mr-3" />
-              <span>Falar no WhatsApp</span>
-            </motion.a>
-            
-            {/* Webmail Link */}
-            <motion.a
-              href="https://webmail.rea.srv.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center w-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-center py-3 px-4 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation border border-gray-200"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: isOpen ? 1 : 0 }}
-              transition={{ delay: isOpen ? 0.7 : 0, duration: 0.3 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Mail className="w-4 h-4 mr-3" />
-              <span>Acessar Webmail</span>
-            </motion.a>
-          </div>
-        </div>
-      </motion.div>
-    </>
+    <MobileMenuEneva 
+      isOpen={isOpen} 
+      toggleMenu={toggleMenu}
+      logo={reaLogoTransparente}
+      menuItems={menuItems}
+    />
   )
 }
 
