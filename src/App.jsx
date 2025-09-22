@@ -126,10 +126,11 @@ function MobileMenu({ isOpen, toggleMenu }) {
       
       {/* Menu Panel */}
       <motion.div
-        className={`fixed top-0 right-0 z-50 w-80 max-w-[85vw] h-full bg-white shadow-2xl overflow-y-auto flex flex-col md:hidden ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        className={`fixed top-0 right-0 z-50 w-80 max-w-[85vw] h-screen max-h-screen bg-white shadow-2xl overflow-hidden flex flex-col md:hidden mobile-menu-fixed ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
         initial={{ x: '100%' }}
         animate={{ x: isOpen ? 0 : '100%' }}
         transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
+        style={{ height: '100vh', maxHeight: '100vh' }}
       >
         {/* Header do Menu */}
         <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 bg-gray-50">
@@ -144,7 +145,7 @@ function MobileMenu({ isOpen, toggleMenu }) {
         </div>
         
         {/* Menu Items */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain mobile-menu-content" style={{ WebkitOverflowScrolling: 'touch', overscrollBehavior: 'contain' }}>
           <nav className="p-4 sm:p-6 space-y-2" role="navigation">
             {[
               { label: 'Início', id: 'home' },
@@ -170,7 +171,7 @@ function MobileMenu({ isOpen, toggleMenu }) {
             ))}
           </nav>
           
-          <div className="p-4 sm:p-6 border-t border-gray-200 bg-gray-50">
+          <div className="p-4 sm:p-6 border-t border-gray-200 bg-gray-50 flex-shrink-0">
             {/* WhatsApp Button */}
             <motion.a
               href="https://wa.me/27998746554"
@@ -203,7 +204,6 @@ function MobileMenu({ isOpen, toggleMenu }) {
         </div>
       </motion.div>
     </>
-  )
   )
 }
 
@@ -396,12 +396,24 @@ function App() {
   React.useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+      document.body.style.height = '100%'
+      document.body.classList.add('menu-open')
     } else {
       document.body.style.overflow = 'unset'
+      document.body.style.position = 'unset'
+      document.body.style.width = 'unset'
+      document.body.style.height = 'unset'
+      document.body.classList.remove('menu-open')
     }
     
     return () => {
       document.body.style.overflow = 'unset'
+      document.body.style.position = 'unset'
+      document.body.style.width = 'unset'
+      document.body.style.height = 'unset'
+      document.body.classList.remove('menu-open')
     }
   }, [isMobileMenuOpen])
   
