@@ -108,49 +108,7 @@ const scaleIn = {
   }
 }
 
-// Componente Bottom Navigation para Mobile
-function BottomNavigation({ activeSection }) {
-  const navItems = [
-    { label: 'Início', id: 'home', icon: Home },
-    { label: 'Serviços', id: 'services', icon: Briefcase },
-    { label: 'Clientes', id: 'clients', icon: Star },
-    { label: 'Sobre', id: 'about', icon: Info },
-    { label: 'Contato', id: 'contact', icon: Contact }
-  ]
 
-  return (
-    <motion.div
-      className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-gray-200 md:hidden"
-      initial={{ y: 100 }}
-      animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-    >
-      <div className="flex justify-around items-center py-2 px-2">
-        {navItems.map((item) => {
-          const IconComponent = item.icon
-          const isActive = activeSection === item.id
-          
-          return (
-            <motion.button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`flex flex-col items-center justify-center py-2 px-3 rounded-lg transition-all duration-200 min-w-[60px] touch-manipulation ${
-                isActive 
-                  ? 'bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-lg' 
-                  : 'text-gray-600 hover:text-green-600 hover:bg-green-50'
-              }`}
-              whileTap={{ scale: 0.95 }}
-              whileHover={{ y: -2 }}
-            >
-              <IconComponent className={`w-5 h-5 mb-1 ${isActive ? 'text-white' : ''}`} />
-              <span className={`text-xs font-medium ${isActive ? 'text-white' : ''}`}>{item.label}</span>
-            </motion.button>
-          )
-        })}
-      </div>
-    </motion.div>
-  )
-}
 
 // Componente de Menu Mobile Melhorado
 function MobileMenu({ isOpen, toggleMenu }) {
@@ -176,9 +134,8 @@ function MobileMenu({ isOpen, toggleMenu }) {
         transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
         style={{ height: '100vh', maxHeight: '100vh' }}
       >
-        {/* Background with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-600 via-blue-600 to-orange-500 opacity-90"></div>
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+        {/* Background - Solid neutral color */}
+        <div className="absolute inset-0 bg-slate-800"></div>
         
         {/* Header do Menu */}
         <div className="relative flex items-center justify-between p-4 sm:p-6 border-b border-white/20">
@@ -670,8 +627,7 @@ function App() {
       {/* Mobile Menu */}
       <MobileMenu isOpen={isMobileMenuOpen} toggleMenu={toggleMobileMenu} />
       
-      {/* Bottom Navigation - Mobile Only */}
-      <BottomNavigation activeSection={activeSection} />
+
 
       {/* Hero Section */}
       <motion.section
