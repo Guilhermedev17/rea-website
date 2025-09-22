@@ -135,23 +135,23 @@ function MobileMenu({ isOpen, toggleMenu }) {
         style={{ height: '100vh', maxHeight: '100vh' }}
       >
         {/* Background - Solid neutral color */}
-        <div className="absolute inset-0 bg-slate-800"></div>
+        <div className="absolute inset-0 bg-white"></div>
         
         {/* Header do Menu */}
         <div className="relative flex items-center justify-between p-4 sm:p-6 border-b border-white/20">
           <div className="flex items-center space-x-3">
             <img src={reaLogoTransparente} alt="R&A Logo" className="h-8 sm:h-10 w-auto" />
-            <div className="text-white">
+            <div className="text-gray-800">
               <h3 className="font-bold text-lg">R&A</h3>
-              <p className="text-xs text-white/80">Serviços Elétricos</p>
+              <p className="text-xs text-gray-600">Serviços Elétricos</p>
             </div>
           </div>
           <button
             onClick={toggleMenu}
-            className="p-2 rounded-full hover:bg-white/20 transition-colors touch-manipulation"
+            className="p-2 rounded-full hover:bg-gray-100 transition-colors touch-manipulation"
             aria-label="Fechar menu"
           >
-            <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" />
           </button>
         </div>
         
@@ -173,19 +173,19 @@ function MobileMenu({ isOpen, toggleMenu }) {
                     toggleMenu()
                     setTimeout(() => scrollToSection(item.id), 300) // Pequeno delay para fechar o menu antes de rolar
                   }}
-                  className="flex items-center w-full text-left p-4 text-white hover:bg-white/20 rounded-xl transition-all duration-200 font-medium border border-white/10 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation backdrop-blur-sm"
+                  className="flex items-center w-full text-left p-4 text-gray-800 hover:bg-gray-100 rounded-xl transition-all duration-200 font-medium border border-gray-200 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 20 }}
                   transition={{ delay: isOpen ? 0.1 * index : 0, duration: 0.3 }}
                   whileTap={{ scale: 0.98 }}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <IconComponent className="w-5 h-5" />
+                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <IconComponent className="w-5 h-5 text-gray-600" />
                   </div>
                   <div className="flex-1">
                     <div className="font-semibold text-base">{item.label}</div>
-                    <div className="text-sm text-white/70">{item.description}</div>
+                    <div className="text-sm text-gray-600">{item.description}</div>
                   </div>
                 </motion.button>
               )
@@ -214,7 +214,7 @@ function MobileMenu({ isOpen, toggleMenu }) {
               href="https://webmail.rea.srv.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center w-full bg-white/20 hover:bg-white/30 text-white text-center py-3 px-4 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation backdrop-blur-sm border border-white/20"
+              className="flex items-center w-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-center py-3 px-4 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:ring-offset-transparent touch-manipulation border border-gray-200"
               initial={{ opacity: 0 }}
               animate={{ opacity: isOpen ? 1 : 0 }}
               transition={{ delay: isOpen ? 0.7 : 0, duration: 0.3 }}
