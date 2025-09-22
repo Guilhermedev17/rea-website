@@ -31,19 +31,18 @@ function MobileMenuEneva({ isOpen, toggleMenu, logo, menuItems = [] }) {
         <div className="absolute inset-0 bg-white"></div>
         
         {/* Header do Menu */}
-        <div className="relative flex items-center justify-between p-4 border-b border-gray-200">
-          <div className="flex items-center space-x-3">
-            {logo && (
-              <img src={logo} alt="Logo" className="h-8 w-auto" />
-            )}
-          </div>
+        <div className="relative flex flex-col items-center justify-center p-4 pb-2 border-b border-gray-200">
           <button
             onClick={toggleMenu}
-            className="p-2 rounded-full hover:bg-gray-100 transition-colors touch-manipulation"
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors touch-manipulation z-10"
             aria-label="Fechar menu"
           >
-            <X className="w-6 h-6 text-gray-800" />
+            <X className="w-7 h-7 text-gray-700" />
           </button>
+          {logo && (
+            <img src={logo} alt="Logo" className="h-10 w-auto mb-2" />
+          )}
+          <h2 className="text-lg font-semibold text-gray-700 uppercase tracking-wide">Menu Principal</h2>
         </div>
         
         {/* Menu Items - Estilo Eneva */}

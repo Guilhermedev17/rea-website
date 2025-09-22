@@ -382,12 +382,12 @@ function App() {
       >
         {/* Barra Superior - Logo e Informações */}
         <motion.div 
-          className="bg-white/95 backdrop-blur-sm border-b border-gray-200"
+          className="bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
         >
-          <div className="container mx-auto px-4 py-2 md:py-1">
+          <div className="container mx-auto px-4 py-3 md:py-2">
             <motion.div 
               className="flex items-center justify-between"
               variants={staggerContainer}
@@ -398,7 +398,7 @@ function App() {
                 <motion.img 
                   src={reaLogoTransparente} 
                   alt="R&A Logo" 
-                  className="h-8 md:h-12 w-auto transition-transform duration-300 hover:scale-105" 
+                  className="h-12 md:h-12 w-auto transition-transform duration-300 hover:scale-105" 
                   variants={scaleIn}
                 />
                 <motion.div 
@@ -433,11 +433,11 @@ function App() {
                 {/* Mobile Menu Button */}
                 <motion.button
                   onClick={toggleMobileMenu}
-                  className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                  className="md:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-sm"
                   whileTap={{ scale: 0.95 }}
                   aria-label="Menu"
                 >
-                  <Menu className="w-6 h-6 text-gray-600" />
+                  <Menu className="w-7 h-7 text-gray-700" strokeWidth={2.5} />
                 </motion.button>
               </motion.div>
             </motion.div>
