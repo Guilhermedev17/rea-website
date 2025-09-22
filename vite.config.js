@@ -5,7 +5,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/rea-website/',  // Base URL para GitHub Pages
+  base: '/',  // Base URL padrão para deploy universal
   plugins: [react(),tailwindcss()],
   resolve: {
     alias: {
@@ -15,6 +15,16 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 5173,
-    strictPort: true
+    strictPort: true,
+    hmr: {
+      overlay: false
+    }
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: 4173,
+    strictPort: false,
+    // Permite todos os hosts para evitar problemas de bloqueio
+    allowedHosts: 'all'
   }
 })
